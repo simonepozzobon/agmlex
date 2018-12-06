@@ -163,8 +163,8 @@
           }
 
           .nav-link {
-            padding-right: $navbar-nav-link-padding-x;
-            padding-left: $navbar-nav-link-padding-x;
+            padding-right: $spacer * 2;
+            padding-left: $spacer * 2;
           }
         }
 

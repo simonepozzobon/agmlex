@@ -1,0 +1,49 @@
+<template lang="html">
+    <div class="container-fluid" ref="container">
+        <div class="row pt-5">
+            <professionisti-item
+                v-for="(item, index) in this.professionisti"
+                :key="index"
+                :img="item.img"
+                :name="item.name"
+                :mail="item.mail"
+                :phone="item.phone"
+                :fields="item.fields"
+            />
+        </div>
+    </div>
+</template>
+
+<script>
+import ProfessionistiItem from '../components/ProfessionistiItem.vue'
+import professionisti from '../dummies/professionisti'
+
+export default {
+    name: 'Professionisti',
+    components: {
+        ProfessionistiItem,
+    },
+    data: function() {
+        return {
+            professionisti: professionisti
+        }
+    },
+    watch: {
+        '$root.containerHeight': function(value) {
+            // set te maximum height for the main container
+            this.setContainerHeight(value)
+        }
+    },
+    methods: {
+        setContainerHeight: function(value) {
+            this.$refs.container.style.minHeight = value + 'px'
+        }
+    },
+    mounted: function() {
+        this.setContainerHeight(this.$root.containerHeight)
+    }
+}
+</script>
+
+<style lang="css">
+</style>

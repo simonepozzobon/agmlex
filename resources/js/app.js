@@ -7,27 +7,46 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue'
+import MainTemplate from './containers/MainTemplate.vue'
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import VueRouter from 'vue-router'
+import routes from './router'
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.use(VueRouter)
+const router = new VueRouter({
+    mode: 'history',
+    base: __dirname,
+    routes: routes
+})
 
 const app = new Vue({
-    el: '#app'
-});
+    router,
+    components: {
+        MainTemplate,
+    },
+    data: function() {
+        return {
+            window: { h: 0, w: 0 },
+            containerHeight: 0,
+            // footerPosition: null,
+        }
+    },
+    methods: {
+        getWindowSize: function() {
+            this.window = {
+                h: window.innerHeight,
+                w: window.innerWidth
+            }
+            this.containerHeight = this.window.h - this.$refs.MainTemplate.getItemsHeight()
+        }
+    },
+    mounted: function() {
+        this.getWindowSize()
+        // this.footerPosition = 'fixed'
+
+        window.addEventListener('resize', () => {
+            this.getWindowSize()
+        })
+    }
+}).$mount('#app')
