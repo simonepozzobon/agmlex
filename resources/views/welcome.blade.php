@@ -9,7 +9,11 @@
     </head>
     <body>
         <div id="app">
-            <main-template ref="MainTemplate"></main-template>
+            <main-template
+                ref="MainTemplate"
+                skills="{{ $skills }}"
+                professionals="{{ $professionals }}">
+            </main-template>
         </div>
         <script src="/js/app.js"></script>
     </body>

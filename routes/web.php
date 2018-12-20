@@ -10,6 +10,4 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/{slug}', function() {
-  return view('welcome');
-})->where('slug', '.*');
+Route::get('/{slug}', 'HomeController@home')->where('slug', '.*');
