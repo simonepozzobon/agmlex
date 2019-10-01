@@ -154,7 +154,7 @@ export default {
 .professionista {
     @include make-col(12);
     @include media-breakpoint-down('sm') {
-        @include make-col(6);
+        @include make-col(12);
     }
     @include media-breakpoint-up('md') {
         @include make-col(4);

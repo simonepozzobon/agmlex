@@ -107,7 +107,7 @@ export default {
 .competenze {
     @include make-col(12);
     @include media-breakpoint-up('sm') {
-        @include make-col(6);
+        @include make-col(12);
     }
     @include media-breakpoint-up('md') {
         @include make-col(4);
