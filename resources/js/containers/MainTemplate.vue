@@ -1,9 +1,9 @@
-<template lang="html">
-    <div>
-        <main-nav ref="nav"/>
-        <router-view />
-        <main-footer ref="footer"/>
-    </div>
+<template>
+<div class="main-template">
+    <main-nav ref="nav" />
+    <router-view />
+    <main-footer ref="footer" />
+</div>
 </template>
 
 <script>
@@ -15,13 +15,13 @@ export default {
         MainNav,
         MainFooter,
     },
-    data: function() {
+    data: function () {
         return {
             height: 0
         }
     },
     methods: {
-        getItemsHeight: function() {
+        getItemsHeight: function () {
             let height = this.height = this.$refs.nav.getNavHeight + this.$refs.footer.getFooterHeight
             return height
         }
@@ -29,5 +29,5 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 </style>

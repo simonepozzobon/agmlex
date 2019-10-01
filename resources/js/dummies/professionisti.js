@@ -1,7 +1,6 @@
-const professionisti = [
-    {
+const professionisti = [{
         id: 1,
-        img: '/assets/businessman_1.jpg',
+        img: '/assets/Lorenzo.jpg',
         name: 'Lorenzo Albanese Ginammi',
         mail: 'l.albanese@agmlex.com',
         phone: '+39 338 4392416',
@@ -19,7 +18,7 @@ const professionisti = [
     },
     {
         id: 2,
-        img: '/assets/businesswoman.jpg',
+        img: '/assets/Isabella.jpg',
         name: 'Isabella Angelini',
         mail: 'i.angelini@agmlex.com',
         phone: '+39 348 0345182',
@@ -38,7 +37,7 @@ const professionisti = [
     },
     {
         id: 3,
-        img: '/assets/businessman_2.jpg',
+        img: '/assets/Michele.jpg',
         name: 'Michele Albanese Ginammi',
         mail: 'm.albanese@agmlex.com',
         phone: '+39 329 4289957',

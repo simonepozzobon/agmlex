@@ -24,7 +24,7 @@ mix
         }
     })
     .browserSync({
-        proxy: 'http://agmlex.test:89',
+        proxy: 'http://agmlex.test',
         browser: 'google chrome',
         port: 3008,
         files: [

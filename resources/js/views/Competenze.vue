@@ -1,13 +1,17 @@
-<template lang="html">
-    <div class="container-fluid" ref="container">
-        <div class="row pt-5">
-            <competenze-item
-                v-for="(item, index) in this.competenze"
-                :key="index"
-                :title="item.title"
-            />
-        </div>
+<template>
+<div
+    class="container-fluid"
+    ref="container"
+>
+    <div class="row pt-5">
+        <competenze-item
+            v-for="(item, index) in this.competenze"
+            :key="index"
+            :title="item.title"
+            :content="item.content"
+        />
     </div>
+</div>
 </template>
 
 <script>
@@ -20,22 +24,22 @@ export default {
         CompetenzeItem,
     },
     watch: {
-        '$root.containerHeight': function(value) {
+        '$root.containerHeight': function (value) {
             // set te maximum height for the main container
             this.setContainerHeight(value)
         }
     },
-    data: function() {
+    data: function () {
         return {
             competenze: competenze,
         }
     },
     methods: {
-        setContainerHeight: function(value) {
+        setContainerHeight: function (value) {
             this.$refs.container.style.minHeight = value + 'px'
         }
     },
-    mounted: function() {
+    mounted: function () {
         this.setContainerHeight(this.$root.containerHeight)
     }
 }

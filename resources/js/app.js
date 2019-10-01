@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -25,23 +24,33 @@ const app = new Vue({
     components: {
         MainTemplate,
     },
-    data: function() {
+    data: function () {
         return {
-            window: { h: 0, w: 0 },
+            window: {
+                h: 0,
+                w: 0
+            },
             containerHeight: 0,
             // footerPosition: null,
         }
     },
     methods: {
-        getWindowSize: function() {
+        getWindowSize: function () {
             this.window = {
                 h: window.innerHeight,
                 w: window.innerWidth
             }
             this.containerHeight = this.window.h - this.$refs.MainTemplate.getItemsHeight()
+        },
+        goTo: function (name) {
+            if (this.$route.name != name) {
+                this.$router.push({
+                    name: name
+                })
+            }
         }
     },
-    mounted: function() {
+    mounted: function () {
         this.getWindowSize()
         // this.footerPosition = 'fixed'
 
