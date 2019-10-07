@@ -31,13 +31,24 @@
                 >
             </div>
         </div>
-        <div class="a-new-user_phone">
+        <div class="a-new-user__phone">
             <div class="form-group">
                 <label for="phone">Telefono</label>
                 <input
                     type="text"
                     name="phone"
                     v-model="phone"
+                    class="form-control"
+                >
+            </div>
+        </div>
+        <div class="a-new-user__email">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="text"
+                    name="email"
+                    v-model="email"
                     class="form-control"
                 >
             </div>
@@ -168,6 +179,7 @@ export default {
         return {
             name: null,
             phone: null,
+            email: null,
             file: null,
             filePlaceholder: 'Scegli File',
             image: null,
@@ -204,6 +216,7 @@ export default {
             if (this.isEdit) {
                 this.name = this.initial.name
                 this.phone = this.initial.phone
+                this.email = this.initial.email
 
                 // set initial values of fieldSelectors
                 if (this.initial.fields.length > 0) {
@@ -278,6 +291,7 @@ export default {
 
             data.append('name', this.name)
             data.append('phone', this.phone)
+            data.append('email', this.email)
             data.append('file', this.file)
             data.append('fields', JSON.stringify(this.professionalFields))
 
@@ -319,6 +333,10 @@ export default {
     &__image {
         min-width: 40%;
         flex: 1 1 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 
     &__image-placeholder {

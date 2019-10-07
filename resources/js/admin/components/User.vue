@@ -19,6 +19,9 @@
         <div class="a-user__phone animated-field">
             {{ user.phone }}
         </div>
+        <div class="a-user__phone animated-field">
+            {{ user.email }}
+        </div>
     </div>
     <div
         class="a-user__fields animated-field animated-container"

@@ -34,6 +34,7 @@ class ProfessionalController extends Controller
         $professional = new Professional();
         $professional->name = $request->name;
         $professional->phone = $request->phone;
+        $profesisonal->email = $request->email;
 
         $file = $request->file('file');
         $filename = uniqid() . '.' . $file->getClientOriginalExtension();
@@ -67,6 +68,7 @@ class ProfessionalController extends Controller
         $professional = Professional::find($request->id);
         $professional->name = $request->name;
         $professional->phone = $request->phone;
+        $professional->email = $request->email;
 
         if ($request->hasFile('file') && $request->file) {
             $file = $request->file('file');
