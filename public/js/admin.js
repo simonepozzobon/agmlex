@@ -51118,7 +51118,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "a-professionals" }, [
+  return _c("div", { staticClass: "a-professionals container" }, [
     _c(
       "div",
       { staticClass: "row" },
@@ -52101,20 +52101,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       data.append('file', this.file);
       data.append('fields', JSON.stringify(this.professionalFields));
 
-      if (this.isEdit == false) {
-        this.$http.post('/api/admin/new-professional', data).then(function (response) {
-          if (response.data.success) {
-            _this6.resetForm().then(function () {
-              _this6.$emit('added', response.data.professional);
-            });
-          }
-        });
-      } else if (this.isEdit == true) {
+      if (this.isEdit == true) {
         data.append('id', this.initial.id);
         this.$http.post('/api/admin/edit-professional', data).then(function (response) {
           if (response.data.success) {
             _this6.resetForm().then(function () {
               _this6.$emit('update', response.data.professional);
+            });
+          }
+        });
+      } else {
+        this.$http.post('/api/admin/new-professional', data).then(function (response) {
+          if (response.data.success) {
+            _this6.resetForm().then(function () {
+              _this6.$emit('added', response.data.professional);
             });
           }
         });
