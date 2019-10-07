@@ -63,7 +63,14 @@
             class="btn btn-primary"
             @click.prevent="createProfessional"
         >
-            Aggiungi Professionista
+            {{ saveBtn }}
+        </button>
+        <button
+            class="btn btn-secondary"
+            v-if="this.isEdit"
+            @click.prevent="undoEdits"
+        >
+            Annulla
         </button>
     </div>
 
@@ -145,6 +152,10 @@ export default {
                 return []
             },
         },
+        isEdit: {
+            type: Boolean,
+            default: false
+        }
     },
     data: function () {
         return {
@@ -164,6 +175,14 @@ export default {
             }
             else {
                 return 'Aggiungi Foto'
+            }
+        },
+        saveBtn: function () {
+            if (this.isEdit) {
+                return 'Salva Modifiche'
+            }
+            else {
+                return 'Aggiungi Professionista'
             }
         },
     },
@@ -204,6 +223,20 @@ export default {
 
             reader.readAsDataURL(this.file)
         },
+        resetForm: function () {
+            return new Promise((resolve, reject) => {
+                this.name = null
+                this.phone = null
+                this.hasImage = false
+                this.file = null
+                resolve()
+            })
+        },
+        undoEdits: function () {
+            this.resetForm().then(() => {
+                this.$emit('undo')
+            })
+        },
         createProfessional: function () {
             let data = new FormData()
 
@@ -212,16 +245,18 @@ export default {
             data.append('file', this.file)
             data.append('fields', JSON.stringify(this.professionalFields))
 
-            this.$http.post('/api/admin/new-professional', data).then(response => {
-                if (response.data.success) {
-                    this.name = null
-                    this.phone = null
-                    this.hasImage = false
-                    this.file = null
-
-                    this.$emit('added', response.data.professional)
-                }
-            })
+            if (this.isEdit == false) {
+                this.$http.post('/api/admin/new-professional', data).then(response => {
+                    if (response.data.success) {
+                        this.resetForm().then(() => {
+                            this.$emit('added', response.data.professional)
+                        })
+                    }
+                })
+            }
+            else {
+                console.log('editing');
+            }
         },
     },
 }

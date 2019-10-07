@@ -9,6 +9,7 @@
             <block>
                 <user
                     :user="professional"
+                    :fields="fields"
                     @deleted="deletedProfessional"
                 />
             </block>
