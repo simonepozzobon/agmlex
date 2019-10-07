@@ -1,14 +1,24 @@
 <template>
 <div class="a-professionals">
     <div class="row">
-        <div class="col-md-6">
+        <div
+            class="col-md-6"
+            v-for="professional in this.professionals"
+            :key="professional.id"
+        >
             <block>
-                <user />
+                <user
+                    :user="professional"
+                    @deleted="deletedProfessional"
+                />
             </block>
         </div>
         <div class="col-md-6">
             <block>
-                <new-user :fields="fields" />
+                <new-user
+                    :fields="fields"
+                    @added="addedProfessional"
+                />
             </block>
         </div>
     </div>
@@ -33,9 +43,19 @@ export default {
             fields: [],
         }
     },
+    methods: {
+        deletedProfessional: function (id) {
+            let idx = this.professionals.findIndex(professional => professional.id == id)
+            if (idx > -1) {
+                this.professionals.splice(idx, 1)
+            }
+        },
+        addedProfessional: function (professional) {
+            this.professionals.push(professional)
+        },
+    },
     created: function () {
         this.$http.get('/api/admin/professionals').then(response => {
-            console.log(response.data);
             this.professionals = response.data.professionals
             this.fields = response.data.fields
         })
@@ -48,5 +68,9 @@ export default {
 
 .a-professionals {
     padding: $spacer * 2;
+
+    .col-md-6 {
+        margin-bottom: $spacer * 1.618;
+    }
 }
 </style>

@@ -5,16 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Professional;
 use App\Field;
+use Illuminate\Support\Facades\Storage;
 
 class ProfessionalController extends Controller
 {
     public function get_professionals()
     {
-        $users = Professional::with('fields')->get();
+        $professionals = Professional::with('fields')->get();
+
+        $professionals = $professionals->transform(
+            function ($professional, $key) {
+                $image = $professional->img;
+                $professional->img = Storage::disk('local')->url($image);
+                return $professional;
+            }
+        );
+
         $fields = Field::all();
         return [
           'success' => true,
-          'users' => $users,
+          'professionals' => $professionals,
           'fields' => $fields,
         ];
     }
@@ -44,10 +54,22 @@ class ProfessionalController extends Controller
         }
 
         $professional = Professional::where('id', $professional->id)->with('fields')->first();
+        $professional->img = Storage::disk('local')->url($professional->img);
 
         return [
           'success' => true,
           'professional' => $professional,
+        ];
+    }
+
+    public function delete_professional($id)
+    {
+        $professional = Professional::find($id);
+        $professional->delete();
+
+        return [
+          'success' => true,
+          'id' => $id,
         ];
     }
 }

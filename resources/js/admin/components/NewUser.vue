@@ -177,8 +177,6 @@ export default {
         },
         updateFields: function (value, id) {
             this.professionalFields[id] = value
-
-            console.log(this.professionalFields);
         },
         fileChanged: function (event) {
             let files = event.target.files
@@ -220,6 +218,8 @@ export default {
                     this.phone = null
                     this.hasImage = false
                     this.file = null
+
+                    this.$emit('added', response.data.professional)
                 }
             })
         },
