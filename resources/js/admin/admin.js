@@ -14,6 +14,8 @@ Vue.use(VueRouter)
 
 import MainTemplate from './containers/MainTemplate.vue'
 
+Vue.prototype.$http = axios
+
 const admin = new Vue({
     router,
     components: {
