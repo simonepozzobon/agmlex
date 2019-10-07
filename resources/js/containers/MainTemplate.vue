@@ -15,16 +15,33 @@ export default {
         MainNav,
         MainFooter,
     },
+    props: {
+        professionalsJson: {
+            type: String,
+            default: null,
+        },
+    },
     data: function () {
         return {
             height: 0
         }
+    },
+    watch: {
+        professionals: function (professionals) {
+            this.$root.professionals = professionals
+        }
+    },
+    computed: {
+        professionals: function () {},
     },
     methods: {
         getItemsHeight: function () {
             let height = this.height = this.$refs.nav.getNavHeight + this.$refs.footer.getFooterHeight
             return height
         }
+    },
+    mounted: function () {
+        this.$root.professionals = JSON.parse(this.professionalsJson)
     },
 }
 </script>

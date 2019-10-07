@@ -5,7 +5,7 @@
 >
     <div class="row pt-5">
         <professionisti-item
-            v-for="(item, index) in this.professionisti"
+            v-for="(item, index) in this.$root.professionals"
             :key="index"
             :img="item.img"
             :name="item.name"
