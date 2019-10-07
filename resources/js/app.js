@@ -31,7 +31,7 @@ const app = new Vue({
                 w: 0
             },
             containerHeight: 0,
-            // footerPosition: null,
+            professionals: [],
         }
     },
     methods: {

@@ -33,10 +33,10 @@
         <div class="professionista-fields">
             <ul>
                 <li
-                    v-for="(item, index) in this.fields"
-                    :key="index"
+                    v-for="field in this.fields"
+                    :key="field.id"
                 >
-                    {{ item }}
+                    {{ field.name }}
                 </li>
             </ul>
         </div>
