@@ -29127,8 +29127,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
         h: 0,
         w: 0
       },
-      containerHeight: 0 // footerPosition: null,
-
+      containerHeight: 0,
+      professionals: []
     };
   },
   methods: {
@@ -50455,16 +50455,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     MainNav: __WEBPACK_IMPORTED_MODULE_1__MainNav_vue___default.a,
     MainFooter: __WEBPACK_IMPORTED_MODULE_0__MainFooter_vue___default.a
   },
+  props: {
+    professionalsJson: {
+      type: String,
+      default: null
+    }
+  },
   data: function data() {
     return {
       height: 0
     };
+  },
+  watch: {
+    professionals: function professionals(_professionals) {
+      this.$root.professionals = _professionals;
+    }
+  },
+  computed: {
+    professionals: function professionals() {}
   },
   methods: {
     getItemsHeight: function getItemsHeight() {
       var height = this.height = this.$refs.nav.getNavHeight + this.$refs.footer.getFooterHeight;
       return height;
     }
+  },
+  mounted: function mounted() {
+    this.$root.professionals = JSON.parse(this.professionalsJson);
   }
 });
 
@@ -51747,10 +51764,12 @@ var render = function() {
         _c("div", { staticClass: "professionista-fields" }, [
           _c(
             "ul",
-            _vm._l(this.fields, function(item, index) {
-              return _c("li", { key: index }, [
+            _vm._l(this.fields, function(field) {
+              return _c("li", { key: field.id }, [
                 _vm._v(
-                  "\n                    " + _vm._s(item) + "\n                "
+                  "\n                    " +
+                    _vm._s(field.name) +
+                    "\n                "
                 )
               ])
             })
@@ -51889,13 +51908,13 @@ var render = function() {
     _c(
       "div",
       { staticClass: "row pt-5" },
-      _vm._l(this.professionisti, function(item, index) {
+      _vm._l(this.$root.professionals, function(item, index) {
         return _c("professionisti-item", {
           key: index,
           attrs: {
             img: item.img,
             name: item.name,
-            mail: item.mail,
+            mail: item.email,
             phone: item.phone,
             fields: item.fields
           }

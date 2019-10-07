@@ -5,13 +5,23 @@ namespace App\Http\Controllers;
 use App\Skill;
 use App\Professional;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
-    public function home() {
+    public function home()
+    {
         $skills = Skill::all();
-        $professionals = Professional::all();
+        $professionals = Professional::with('fields')->get();
 
-        return view( 'welcome', compact( 'skills', 'professionals' ) );
+        $professionals = $professionals->transform(
+            function ($professional, $key) {
+                $image = $professional->img;
+                $professional->img = Storage::disk('local')->url($image);
+                return $professional;
+            }
+        );
+
+        return view('welcome', compact('skills', 'professionals'));
     }
 }
