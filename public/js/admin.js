@@ -51060,6 +51060,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -51084,6 +51085,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       if (idx > -1) {
         this.professionals.splice(idx, 1);
+      }
+    },
+    updatedProfessional: function updatedProfessional(newProfessional) {
+      var idx = this.professionals.findIndex(function (professional) {
+        return professional.id == newProfessional.id;
+      });
+
+      if (idx > -1) {
+        this.professionals.splice(idx, 1, newProfessional);
       }
     },
     addedProfessional: function addedProfessional(professional) {
@@ -51123,7 +51133,10 @@ var render = function() {
                 [
                   _c("user", {
                     attrs: { user: professional, fields: _vm.fields },
-                    on: { deleted: _vm.deletedProfessional }
+                    on: {
+                      deleted: _vm.deletedProfessional,
+                      update: _vm.updatedProfessional
+                    }
                   })
                 ],
                 1
@@ -51452,6 +51465,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -51544,7 +51559,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     editProfessional: function editProfessional() {
-      console.log('editing professional');
+      this.$refs.newUser.setInitials();
       this.initAnim();
     },
     deleteProfessional: function deleteProfessional() {
@@ -51554,6 +51569,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$http.delete(url).then(function (response) {
         _this2.$emit('deleted', _this2.user.id);
       });
+    },
+    updateProfessional: function updateProfessional(professional) {
+      this.$emit('update', professional);
+      this.undoEdits();
     }
   }
 });
@@ -51647,8 +51666,8 @@ var render = function() {
       _c("new-user", {
         ref: "newUser",
         staticClass: "a-user__new-user",
-        attrs: { "is-edit": true, fields: _vm.fields },
-        on: { undo: _vm.undoEdits }
+        attrs: { "is-edit": true, fields: _vm.fields, initial: this.user },
+        on: { undo: _vm.undoEdits, update: _vm.updateProfessional }
       })
     ],
     1
@@ -51903,6 +51922,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -51920,6 +51940,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     isEdit: {
       type: Boolean,
       default: false
+    },
+    initial: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
     }
   },
   data: function data() {
@@ -51932,6 +51958,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       hasImage: false,
       professionalFields: []
     };
+  },
+  watch: {
+    initial: function initial() {
+      this.setInitials();
+      console.log('set initials');
+    }
   },
   computed: {
     addImageBtn: function addImageBtn() {
@@ -51950,6 +51982,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   methods: {
+    setInitials: function setInitials() {
+      var _this = this;
+
+      if (this.isEdit) {
+        this.name = this.initial.name;
+        this.phone = this.initial.phone; // set initial values of fieldSelectors
+
+        if (this.initial.fields.length > 0) {
+          var fieldSelectors = this.$refs.fieldSelector;
+
+          var _loop = function _loop(i) {
+            var fieldID = _this.initial.fields[i].id;
+            var idx = fieldSelectors.findIndex(function (selector) {
+              return selector.field.id == fieldID;
+            });
+
+            if (idx > -1) {
+              fieldSelectors[idx].value = true;
+            }
+          };
+
+          for (var i = 0; i < this.initial.fields.length; i++) {
+            _loop(i);
+          }
+        }
+
+        this.hasImage = true;
+        this.imageSrc = this.initial.img;
+      }
+    },
     showModal: function showModal() {
       var modal = this.$refs.addImage;
       __WEBPACK_IMPORTED_MODULE_0_jquery___default()(modal).modal('show');
@@ -51961,7 +52023,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.professionalFields[id] = value;
     },
     fileChanged: function fileChanged(event) {
-      var _this = this;
+      var _this2 = this;
 
       var files = event.target.files;
 
@@ -51971,46 +52033,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.file = null;
         this.$nextTick(function () {
           // setto le variabili con il nuovo file
-          _this.file = files[0];
-          _this.filePlaceholder = files[0].name;
+          _this2.file = files[0];
+          _this2.filePlaceholder = files[0].name;
 
-          _this.$nextTick(function () {
+          _this2.$nextTick(function () {
             // aggiungo la preview
-            _this.addPreview();
+            _this2.addPreview();
           });
         });
       }
     },
     addPreview: function addPreview() {
-      var _this2 = this;
+      var _this3 = this;
 
       var reader = new FileReader();
       var src = reader.addEventListener('load', function (event) {
-        _this2.hasImage = true;
-        _this2.imageSrc = reader.result;
+        _this3.hasImage = true;
+        _this3.imageSrc = reader.result;
       });
       reader.readAsDataURL(this.file);
     },
     resetForm: function resetForm() {
-      var _this3 = this;
+      var _this4 = this;
 
       return new Promise(function (resolve, reject) {
-        _this3.name = null;
-        _this3.phone = null;
-        _this3.hasImage = false;
-        _this3.file = null;
+        _this4.name = null;
+        _this4.phone = null;
+        _this4.hasImage = false;
+        _this4.file = null;
         resolve();
       });
     },
     undoEdits: function undoEdits() {
-      var _this4 = this;
+      var _this5 = this;
 
       this.resetForm().then(function () {
-        _this4.$emit('undo');
+        _this5.$emit('undo');
       });
     },
     createProfessional: function createProfessional() {
-      var _this5 = this;
+      var _this6 = this;
 
       var data = new FormData();
       data.append('name', this.name);
@@ -52021,15 +52083,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (this.isEdit == false) {
         this.$http.post('/api/admin/new-professional', data).then(function (response) {
           if (response.data.success) {
-            _this5.resetForm().then(function () {
-              _this5.$emit('added', response.data.professional);
+            _this6.resetForm().then(function () {
+              _this6.$emit('added', response.data.professional);
             });
           }
         });
-      } else {
-        console.log('editing');
+      } else if (this.isEdit == true) {
+        data.append('id', this.initial.id);
+        this.$http.post('/api/admin/edit-professional', data).then(function (response) {
+          if (response.data.success) {
+            _this6.resetForm().then(function () {
+              _this6.$emit('update', response.data.professional);
+            });
+          }
+        });
       }
     }
+  },
+  mounted: function mounted() {
+    this.setInitials();
   }
 });
 
@@ -52150,6 +52222,8 @@ var render = function() {
               { key: field.id, staticClass: "a-new-user__field" },
               [
                 _c("field-selector", {
+                  ref: "fieldSelector",
+                  refInFor: true,
                   attrs: { field: field },
                   on: { update: _vm.updateFields }
                 })

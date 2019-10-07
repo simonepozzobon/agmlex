@@ -62,6 +62,41 @@ class ProfessionalController extends Controller
         ];
     }
 
+    public function edit_professional(Request $request)
+    {
+        $professional = Professional::find($request->id);
+        $professional->name = $request->name;
+        $professional->phone = $request->phone;
+
+        if ($request->hasFile('file') && $request->file) {
+            $file = $request->file('file');
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $image = $file->storeAs('public/media', $filename);
+
+            $professional->img = $image;
+        }
+        $professional->save();
+
+        $fields = collect();
+        $professional->fields()->detach();
+        foreach (json_decode($request->fields) as $key => $value) {
+            if ($value == true) {
+                $field = Field::find($key);
+                    $professional->fields()->save($field);
+            }
+        }
+
+        $professional = Professional::where('id', $professional->id)->with('fields')->first();
+        $professional->img = Storage::disk('local')->url($professional->img);
+
+        return [
+          'success' => true,
+          'fields' => $fields,
+          'request' => $request->all(),
+          'professional' => $professional,
+        ];
+    }
+
     public function delete_professional($id)
     {
         $professional = Professional::find($id);

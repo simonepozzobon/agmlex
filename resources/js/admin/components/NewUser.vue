@@ -52,6 +52,7 @@
                 :key="field.id"
             >
                 <field-selector
+                    ref="fieldSelector"
                     :field="field"
                     @update="updateFields"
                 />
@@ -155,7 +156,13 @@ export default {
         isEdit: {
             type: Boolean,
             default: false
-        }
+        },
+        initial: {
+            type: Object,
+            default: function () {
+                return {}
+            },
+        },
     },
     data: function () {
         return {
@@ -167,6 +174,12 @@ export default {
             hasImage: false,
             professionalFields: [],
         }
+    },
+    watch: {
+        initial: function () {
+            this.setInitials()
+            console.log('set initials');
+        },
     },
     computed: {
         addImageBtn: function () {
@@ -187,6 +200,29 @@ export default {
         },
     },
     methods: {
+        setInitials: function () {
+            if (this.isEdit) {
+                this.name = this.initial.name
+                this.phone = this.initial.phone
+
+                // set initial values of fieldSelectors
+                if (this.initial.fields.length > 0) {
+                    let fieldSelectors = this.$refs.fieldSelector
+                    for (let i = 0; i < this.initial.fields.length; i++) {
+                        let fieldID = this.initial.fields[i].id
+
+                        let idx = fieldSelectors.findIndex(selector => selector.field.id == fieldID)
+
+                        if (idx > -1) {
+                            fieldSelectors[idx].value = true
+                        }
+                    }
+                }
+
+                this.hasImage = true
+                this.imageSrc = this.initial.img
+            }
+        },
         showModal: function () {
             let modal = this.$refs.addImage
             $(modal).modal('show')
@@ -254,10 +290,21 @@ export default {
                     }
                 })
             }
-            else {
-                console.log('editing');
+            else if (this.isEdit == true) {
+                data.append('id', this.initial.id)
+
+                this.$http.post('/api/admin/edit-professional', data).then(response => {
+                    if (response.data.success) {
+                        this.resetForm().then(() => {
+                            this.$emit('update', response.data.professional)
+                        })
+                    }
+                })
             }
         },
+    },
+    mounted: function () {
+        this.setInitials()
     },
 }
 </script>

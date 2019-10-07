@@ -53,7 +53,9 @@
         class="a-user__new-user"
         :is-edit="true"
         :fields="fields"
+        :initial="this.user"
         @undo="undoEdits"
+        @update="updateProfessional"
     />
 </div>
 </template>
@@ -163,7 +165,7 @@ export default {
             }
         },
         editProfessional: function () {
-            console.log('editing professional');
+            this.$refs.newUser.setInitials()
             this.initAnim()
         },
         deleteProfessional: function () {
@@ -172,6 +174,10 @@ export default {
                 this.$emit('deleted', this.user.id)
             })
         },
+        updateProfessional: function (professional) {
+            this.$emit('update', professional)
+            this.undoEdits()
+        }
     },
 }
 </script>

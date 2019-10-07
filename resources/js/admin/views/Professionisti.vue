@@ -11,6 +11,7 @@
                     :user="professional"
                     :fields="fields"
                     @deleted="deletedProfessional"
+                    @update="updatedProfessional"
                 />
             </block>
         </div>
@@ -49,6 +50,12 @@ export default {
             let idx = this.professionals.findIndex(professional => professional.id == id)
             if (idx > -1) {
                 this.professionals.splice(idx, 1)
+            }
+        },
+        updatedProfessional: function (newProfessional) {
+            let idx = this.professionals.findIndex(professional => professional.id == newProfessional.id)
+            if (idx > -1) {
+                this.professionals.splice(idx, 1, newProfessional)
             }
         },
         addedProfessional: function (professional) {
