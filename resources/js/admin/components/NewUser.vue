@@ -295,22 +295,22 @@ export default {
             data.append('file', this.file)
             data.append('fields', JSON.stringify(this.professionalFields))
 
-            if (this.isEdit == false) {
-                this.$http.post('/api/admin/new-professional', data).then(response => {
-                    if (response.data.success) {
-                        this.resetForm().then(() => {
-                            this.$emit('added', response.data.professional)
-                        })
-                    }
-                })
-            }
-            else if (this.isEdit == true) {
+            if (this.isEdit == true) {
                 data.append('id', this.initial.id)
 
                 this.$http.post('/api/admin/edit-professional', data).then(response => {
                     if (response.data.success) {
                         this.resetForm().then(() => {
                             this.$emit('update', response.data.professional)
+                        })
+                    }
+                })
+            }
+            else {
+                this.$http.post('/api/admin/new-professional', data).then(response => {
+                    if (response.data.success) {
+                        this.resetForm().then(() => {
+                            this.$emit('added', response.data.professional)
                         })
                     }
                 })

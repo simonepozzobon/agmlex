@@ -34,7 +34,7 @@ class ProfessionalController extends Controller
         $professional = new Professional();
         $professional->name = $request->name;
         $professional->phone = $request->phone;
-        $profesisonal->email = $request->email;
+        $professional->email = $request->email;
 
         $file = $request->file('file');
         $filename = uniqid() . '.' . $file->getClientOriginalExtension();
