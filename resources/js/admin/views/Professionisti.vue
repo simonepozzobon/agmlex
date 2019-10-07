@@ -1,9 +1,14 @@
 <template>
-<div class="a-users">
+<div class="a-professionals">
     <div class="row">
         <div class="col-md-6">
             <block>
                 <user />
+            </block>
+        </div>
+        <div class="col-md-6">
+            <block>
+                <new-user :fields="fields" />
             </block>
         </div>
     </div>
@@ -13,22 +18,26 @@
 <script>
 import Block from '../components/Block.vue'
 import User from '../components/User.vue'
+import NewUser from '../components/NewUser.vue'
 
 export default {
     name: 'Professionisti',
     components: {
         Block,
         User,
+        NewUser,
     },
     data: function () {
         return {
-            users: []
+            professionals: [],
+            fields: [],
         }
     },
     created: function () {
-        this.$http.get('/api/admin/users').then(response => {
+        this.$http.get('/api/admin/professionals').then(response => {
             console.log(response.data);
-            this.users = response.data.users
+            this.professionals = response.data.professionals
+            this.fields = response.data.fields
         })
     },
 }
@@ -37,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 @import '~styles/shared';
 
-.a-users {
+.a-professionals {
     padding: $spacer * 2;
 }
 </style>

@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get(
 
 Route::prefix('admin')->group(
     function () {
-        Route::get('users', 'ProfessionalController@get_users');
+        Route::get('professionals', 'ProfessionalController@get_professionals');
+        Route::post('new-professional', 'ProfessionalController@create_professional');
     }
 );

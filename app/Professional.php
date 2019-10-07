@@ -10,6 +10,6 @@ class Professional extends Model
 
     public function fields()
     {
-        return $this->belongToMany(Field::class);
+        return $this->belongsToMany(Field::class);
     }
 }
