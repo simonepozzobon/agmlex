@@ -9,7 +9,6 @@
     </head>
     <body>
         <div id="admin">
-            Ciao
         </div>
         <script src="/js/admin.js"></script>
     </body>
