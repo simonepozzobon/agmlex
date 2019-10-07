@@ -10,4 +10,5 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/admin/{slug?}', 'AdminController@home')->where('slug', '.*');
 Route::get('/{slug}', 'HomeController@home')->where('slug', '.*');

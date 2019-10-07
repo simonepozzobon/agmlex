@@ -9,24 +9,8 @@
     ></div>
     <div class="footer-content">
         <span class="text-primary d-block">
-            AGMLEX // Via Giuseppe Palumbo 12, 00195 - Roma // <a href="#">agmlex@pec.it</a>
+            AGMLEX // Via Giuseppe Palumbo 12, 00195 - Roma
         </span>
-        <div class="social d-flex">
-            <div class="social pr-2">
-                <img
-                    src="/assets/Facebook.svg"
-                    class="img-fluid"
-                    width="24"
-                />
-            </div>
-            <div class="social">
-                <img
-                    src="/assets/Twitter.svg"
-                    class="img-fluid"
-                    width="24"
-                />
-            </div>
-        </div>
     </div>
 </footer>
 </template>
