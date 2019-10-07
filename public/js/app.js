@@ -51914,7 +51914,7 @@ var render = function() {
           attrs: {
             img: item.img,
             name: item.name,
-            mail: item.mail,
+            mail: item.email,
             phone: item.phone,
             fields: item.fields
           }
