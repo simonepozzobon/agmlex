@@ -51,11 +51,7 @@
             <block>
                 <div class="form-group">
                     <label for="content">Descrizione</label>
-                    <textarea
-                        name="content"
-                        class="form-control"
-                        v-model="content"
-                    ></textarea>
+                    <text-editor />
                 </div>
             </block>
         </div>
@@ -65,11 +61,13 @@
 
 <script>
 import Block from '../components/Block.vue'
+import TextEditor from '../components/TextEditor.vue'
 
 export default {
     name: 'NewsPanel',
     components: {
         Block,
+        TextEditor,
     },
     props: {
         isEdit: {
