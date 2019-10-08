@@ -1,137 +1,150 @@
 <template>
-<div class="admin-editor">
-    <div
-        :class="hasLabelClass"
-        @click.prevent="focusEditor"
-        v-if="this.editor"
-    >
-        <div class="admin-editor__container">
-            <editor-menu-bar
-                :editor="editor"
-                slot-scope"{
-                commands,
-                isActive
-                }"
-            >
-                <div class="menubar">
-                    <button
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.bold() }"
-                        @click="commands.bold"
-                    >
-                        B
-                    </button>
-
-                    <button
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.italic() }"
-                        @click="commands.italic"
-                    >
-                        I
-                    </button>
-
-                    <button
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.strike() }"
-                        @click="commands.strike"
-                    >
-                        S
-                    </button>
-
-                    <button
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.underline() }"
-                        @click="commands.underline"
-                    >
-                        U
-                    </button>
-
-                    <button
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.bullet_list() }"
-                        @click="commands.bullet_list"
-                    >
-                        List
-                    </button>
-
-                    <button
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-                        @click="commands.heading({ level: 1 })"
-                    >
-                        H1
-                    </button>
-
-                    <button
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-                        @click="commands.heading({ level: 2 })"
-                    >
-                        H2
-                    </button>
-
-                    <button
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-                        @click="commands.heading({ level: 3 })"
-                    >
-                        H3
-                    </button>
-
-                </div>
-            </editor-menu-bar>
-            <!-- <editor-menu-bubble
-                class="menububble"
-                :editor="editor"
-                @hide="hideLinkMenu"
-                slot-scope="{ commands, isActive, getMarkAttrs, menu }"
-            >
-                <div
-                    class="menububble"
-                    :class="{ 'is-active': menu.isActive }"
-                    :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
+<div class="a-text-editor">
+    <div class="a-text-editor__container editor">
+        <editor-menu-bar
+            :editor="editor"
+            v-slot="{ commands, isActive }"
+        >
+            <div class="menubar">
+                <button
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.bold() }"
+                    @click="commands.bold"
                 >
+                    B
+                </button>
 
-                    <form
-                        class="menububble__form"
-                        v-if="linkMenuIsActive"
-                        @submit.prevent="setLinkUrl(commands.link, linkUrl)"
-                    >
-                        <input
-                            class="menububble__input"
-                            type="text"
-                            v-model="linkUrl"
-                            placeholder="https://"
-                            ref="linkInput"
-                            @keydown.esc="hideLinkMenu"
-                        />
-                        <button
-                            class="menububble__button"
-                            @click="setLinkUrl(commands.link, null)"
-                            type="button"
-                        >
-                            Elimina
-                        </button>
-                    </form>
+                <button
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.italic() }"
+                    @click="commands.italic"
+                >
+                    I
+                </button>
 
-                    <template v-else>
-                        <button
-                            class="menububble__button"
-                            @click="showLinkMenu(getMarkAttrs('link'))"
-                            :class="{ 'is-active': isActive.link() }"
-                        >
-                            <span>{{ isActive.link() ? 'Modifica Link' : 'Aggiungi Link'}}</span>
-                        </button>
-                    </template>
+                <button
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.strike() }"
+                    @click="commands.strike"
+                >
+                    S
+                </button>
 
-                </div>
-            </editor-menu-bubble> -->
-            <editor-content
-                class="admin-editor__content"
-                :editor="editor"
+                <button
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.underline() }"
+                    @click="commands.underline"
+                >
+                    U
+                </button>
+
+                <div class="menubar__spacer"></div>
+
+                <button
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.bullet_list() }"
+                    @click="commands.bullet_list"
+                >
+                    Lista
+                </button>
+
+                <div class="menubar__spacer"></div>
+
+                <button
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                    @click="commands.heading({ level: 1 })"
+                >
+                    H1
+                </button>
+
+                <button
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                    @click="commands.heading({ level: 2 })"
+                >
+                    H2
+                </button>
+
+                <button
+                    class="menubar__button"
+                    :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+                    @click="commands.heading({ level: 3 })"
+                >
+                    H3
+                </button>
+
+                <button
+                    class="menubar__button menubar__right"
+                    :class="{ 'is-active': isActive.image() }"
+                    @click="showImagePrompt(commands.image)"
+                >
+                    Aggiungi Immagine
+                </button>
+
+            </div>
+        </editor-menu-bar>
+        <editor-menu-bubble
+            class="menububble"
+            :editor="editor"
+            @hide="hideLinkMenu"
+            v-slot="{ commands, isActive, getMarkAttrs, menu }"
+        >
+            <div
+                class="menububble"
+                :class="{ 'is-active': menu.isActive }"
+                :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
             >
-            </editor-content>
-        </div>
+
+                <form
+                    class="menububble__form"
+                    v-if="linkMenuIsActive"
+                    @submit.prevent="setLinkUrl(commands.link, linkUrl, linkTarget)"
+                >
+                    <input
+                        class="menububble__input"
+                        type="text"
+                        v-model="linkUrl"
+                        placeholder="https://"
+                        ref="linkInput"
+                        @keydown.esc="hideLinkMenu"
+                    />
+
+                    <span class="text-white m-2">Esterno?</span>
+                    <span class="switch">
+                        <input
+                            type="checkbox"
+                            class="switch"
+                            id="link-target"
+                            v-model="linkTarget"
+                        />
+                        <label for="link-target"></label>
+                    </span>
+                    <button
+                        class="menububble__button"
+                        @click="setLinkUrl(commands.link, null)"
+                        type="button"
+                    >
+                        Elimina
+                    </button>
+                </form>
+
+                <template v-else>
+                    <button
+                        class="menububble__button"
+                        @click="showLinkMenu(getMarkAttrs('link'))"
+                        :class="{ 'is-active': isActive.link() }"
+                    >
+                        <span>{{ isActive.link() ? 'Modifica Link' : 'Aggiungi Link'}}</span>
+                    </button>
+                </template>
+            </div>
+        </editor-menu-bubble>
+        <editor-content
+            class="a-text-editor__content"
+            :editor="editor"
+        >
+        </editor-content>
     </div>
 </div>
 </template>
@@ -154,14 +167,12 @@ import {
     HorizontalRule,
     OrderedList,
     BulletList,
-    Image,
     ListItem,
     TodoItem,
     TodoList,
     Bold,
     Code,
     Italic,
-    Link,
     Strike,
     Underline,
     History,
@@ -169,6 +180,8 @@ import {
 from 'tiptap-extensions'
 
 import Iframe from './plugins/Iframe'
+import Link from './plugins/Link'
+import Image from './plugins/Image'
 
 export default {
     name: 'TextEditor',
@@ -193,57 +206,49 @@ export default {
             html: null,
             json: null,
             linkUrl: null,
+            linkTarget: null,
             linkMenuIsActive: false,
         }
-    },
-    computed: {
-        hasLabelClass: function () {
-            if (this.hasLabel) {
-                return 'col-md-10'
-            }
-            return 'col-12'
-        },
     },
     methods: {
         init: function () {
             this.editor = new Editor({
                 extensions: [
                     new Blockquote(),
+                    new Bold(),
                     new BulletList(),
+                    new Code(),
                     new CodeBlock(),
                     new HardBreak(),
                     new Heading({
                         levels: [1, 2, 3]
                     }),
-                    // new Iframe(),
-                    new Image(),
+                    new Iframe(),
+                    new History(),
                     new HorizontalRule(),
+                    new Image(),
+                    new Italic(),
+                    new Link(),
                     new ListItem(),
                     new OrderedList(),
+                    new Strike(),
                     new TodoItem(),
                     new TodoList(),
-                    new Link(),
-                    new Bold(),
-                    new Code(),
-                    new Italic(),
-                    new Strike(),
                     new Underline(),
-                    new History(),
                 ],
-                content: '',
+                content: this.initial ? this.initial : '',
             })
-
-            // console.log(this.initial);
 
             this.editor.on('update', (e) => {
                 this.html = e.getHTML()
                 this.json = e.getJSON()
                 this.$emit('update', this.json, this.html)
-                // console.log('updated');
             })
         },
         showLinkMenu: function (attrs) {
+            console.log('show link menu');
             this.linkUrl = attrs.href
+            this.linkTarget = attrs.href
             this.linkMenuIsActive = true
             this.$nextTick(() => {
                 this.$refs.linkInput.focus()
@@ -251,11 +256,18 @@ export default {
         },
         hideLinkMenu: function () {
             this.linkUrl = null
+            this.linkTarget = null
             this.linkMenuIsActive = false
         },
-        setLinkUrl: function (command, url) {
+        setLinkUrl: function (command, url, target) {
+            let formattedTarget = '_self'
+            if (target) {
+                formattedTarget = '_blank'
+            }
+
             command({
-                href: url
+                href: url,
+                target: formattedTarget
             })
             this.hideLinkMenu()
             this.editor.focus()
@@ -263,6 +275,14 @@ export default {
         focusEditor: function () {
             if (this.editor) {
                 this.editor.focus()
+            }
+        },
+        showImagePrompt: function (command) {
+            let src = prompt('Inserire l\'url dell\'immagine')
+            if (src !== null) {
+                command({
+                    src
+                })
             }
         },
     },
@@ -279,7 +299,7 @@ export default {
 @import '~styles/shared';
 @import '~styles/vendor/tiptap/main';
 
-.admin-editor {
+.a-text-editor {
     &__container {
         max-width: 100%;
         margin: 0;

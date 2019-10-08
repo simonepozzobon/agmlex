@@ -82478,7 +82478,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*,\n*::before,\n*::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle, aside, figcaption, figure, footer, header, hgroup, main, nav, section {\n  display: block;\n}\nbody {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"]:focus {\n  outline: 0 !important;\n}\nhr {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1, h2, h3, h4, h5, h6 {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title],\nabbr[data-original-title] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol,\nul,\ndl {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol,\nul ul,\nol ul,\nul ol {\n  margin-bottom: 0;\n}\ndt {\n  font-weight: 700;\n}\ndd {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote {\n  margin: 0 0 1rem;\n}\ndfn {\n  font-style: italic;\n}\nb,\nstrong {\n  font-weight: bolder;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -.25em;\n}\nsup {\n  top: -.5em;\n}\na {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre,\ncode,\nkbd,\nsamp {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure {\n  margin: 0 0 1rem;\n}\nimg {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable {\n  border-collapse: collapse;\n}\ncaption {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth {\n  text-align: inherit;\n}\nlabel {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton {\n  border-radius: 0;\n}\nbutton:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput,\nbutton,\nselect,\noptgroup,\ntextarea {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton,\ninput {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"],\ninput[type=\"checkbox\"] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"],\ninput[type=\"time\"],\ninput[type=\"datetime-local\"],\ninput[type=\"month\"] {\n  -webkit-appearance: listbox;\n}\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress {\n  vertical-align: baseline;\n}\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput {\n  display: inline-block;\n}\nsummary {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate {\n  display: none;\n}\n[hidden] {\n  display: none !important;\n}\n.editor * {\n  margin: 0;\n  padding: 0;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-text-size-adjust: 100%;\n     -moz-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n          text-size-adjust: 100%;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  -webkit-touch-callout: none;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-rendering: optimizeLegibility;\n}\n.editor *:focus {\n    outline: none;\n}\n.editor *::after,\n.editor *::before {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.editor a {\n  color: inherit;\n}\n.editor blockquote,\n.editor h1,\n.editor h2,\n.editor h3,\n.editor ol,\n.editor p,\n.editor pre,\n.editor ul {\n  margin: 1rem 0;\n}\n.editor blockquote:first-child,\n  .editor h1:first-child,\n  .editor h2:first-child,\n  .editor h3:first-child,\n  .editor ol:first-child,\n  .editor p:first-child,\n  .editor pre:first-child,\n  .editor ul:first-child {\n    margin-top: 0;\n}\n.editor blockquote:last-child,\n  .editor h1:last-child,\n  .editor h2:last-child,\n  .editor h3:last-child,\n  .editor ol:last-child,\n  .editor p:last-child,\n  .editor pre:last-child,\n  .editor ul:last-child {\n    margin-bottom: 0;\n}\n.editor h1,\n.editor h2,\n.editor h3 {\n  line-height: 1.3;\n}\n.editor .button {\n  font-weight: bold;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  background: transparent;\n  border: 0;\n  color: #000000;\n  padding: 0.2rem 0.5rem;\n  margin-right: 0.2rem;\n  border-radius: 3px;\n  cursor: pointer;\n  background-color: rgba(0, 0, 0, 0.1);\n}\n.editor .message {\n  background-color: rgba(0, 0, 0, 0.05);\n  color: rgba(0, 0, 0, 0.7);\n  padding: 1rem;\n  border-radius: 6px;\n  margin-bottom: 1.5rem;\n  font-style: italic;\n}\n.editor {\n  position: relative;\n  max-width: 30rem;\n  margin: 0 auto 5rem;\n}\n.editor__content {\n    word-wrap: break-word;\n}\n.editor__content * {\n      caret-color: currentColor;\n}\n.editor__content pre {\n      padding: 0.7rem 1rem;\n      border-radius: 5px;\n      background: #000000;\n      color: #ffffff;\n      font-size: 0.8rem;\n      overflow-x: auto;\n}\n.editor__content pre code {\n        display: block;\n}\n.editor__content p code {\n      display: inline-block;\n      padding: 0 0.4rem;\n      border-radius: 5px;\n      font-size: 0.8rem;\n      font-weight: bold;\n      background: rgba(0, 0, 0, 0.1);\n      color: rgba(0, 0, 0, 0.8);\n}\n.editor__content ol,\n    .editor__content ul {\n      padding-left: 1rem;\n}\n.editor__content li > ol,\n    .editor__content li > p,\n    .editor__content li > ul {\n      margin: 0;\n}\n.editor__content a {\n      color: inherit;\n}\n.editor__content blockquote {\n      border-left: 3px solid rgba(0, 0, 0, 0.1);\n      color: rgba(0, 0, 0, 0.8);\n      padding-left: 0.8rem;\n      font-style: italic;\n}\n.editor__content blockquote p {\n        margin: 0;\n}\n.editor__content img {\n      max-width: 100%;\n      border-radius: 3px;\n}\n.editor__content table {\n      border-collapse: collapse;\n      table-layout: fixed;\n      width: 100%;\n      margin: 0;\n      overflow: hidden;\n}\n.editor__content table td,\n      .editor__content table th {\n        min-width: 1em;\n        border: 2px solid #dddddd;\n        padding: 3px 5px;\n        vertical-align: top;\n        -webkit-box-sizing: border-box;\n                box-sizing: border-box;\n        position: relative;\n}\n.editor__content table td > *,\n        .editor__content table th > * {\n          margin-bottom: 0;\n}\n.editor__content table th {\n        font-weight: bold;\n        text-align: left;\n}\n.editor__content table .selectedCell:after {\n        z-index: 2;\n        position: absolute;\n        content: \"\";\n        left: 0;\n        right: 0;\n        top: 0;\n        bottom: 0;\n        background: rgba(200, 200, 255, 0.4);\n        pointer-events: none;\n}\n.editor__content table .column-resize-handle {\n        position: absolute;\n        right: -2px;\n        top: 0;\n        bottom: 0;\n        width: 4px;\n        z-index: 20;\n        background-color: #adf;\n        pointer-events: none;\n}\n.editor__content .tableWrapper {\n      margin: 1em 0;\n      overflow-x: auto;\n}\n.editor__content .resize-cursor {\n      cursor: ew-resize;\n      cursor: col-resize;\n}\n.menubar {\n  margin-bottom: 1rem;\n  -webkit-transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;\n  transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;\n  background-color: rgba(217, 217, 217, 0.5);\n  padding: 0.61805rem;\n  border-radius: 5px;\n}\n.menubar.is-hidden {\n    visibility: hidden;\n    opacity: 0;\n}\n.menubar.is-focused {\n    visibility: visible;\n    opacity: 1;\n    -webkit-transition: visibility 0.2s, opacity 0.2s;\n    transition: visibility 0.2s, opacity 0.2s;\n}\n.menubar__button {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    background: #d9d9d9;\n    text-transform: uppercase;\n    font-weight: 600;\n    font-size: 0.75rem;\n    letter-spacing: 3px;\n    border: 0;\n    color: #000;\n    padding: 0.2rem 0.5rem;\n    margin-right: 0.2rem;\n    border-radius: 3px;\n    cursor: pointer;\n}\n.menubar__button:hover {\n      background-color: rgba(0, 0, 0, 0.05);\n      -webkit-box-shadow: 0 0 0 0.2rem rgba(82, 93, 110, 0.25);\n              box-shadow: 0 0 0 0.2rem rgba(82, 93, 110, 0.25);\n}\n.menubar__button.is-active {\n      background-color: rgba(0, 0, 0, 0.1);\n      -webkit-box-shadow: 0 0 0 0.2rem rgba(82, 93, 110, 0.25);\n              box-shadow: 0 0 0 0.2rem rgba(82, 93, 110, 0.25);\n}\n.menububble {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  z-index: 20;\n  background: #000000;\n  border-radius: 5px;\n  padding: 0.3rem;\n  margin-bottom: 0.5rem;\n  -webkit-transform: translateX(-50%);\n          transform: translateX(-50%);\n  visibility: hidden;\n  opacity: 0;\n  -webkit-transition: opacity 0.2s, visibility 0.2s;\n  transition: opacity 0.2s, visibility 0.2s;\n}\n.menububble.is-active {\n    opacity: 1;\n    visibility: visible;\n}\n.menububble__button {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    background: transparent;\n    border: 0;\n    color: #ffffff;\n    padding: 0.2rem 0.5rem;\n    margin-right: 0.2rem;\n    border-radius: 3px;\n    cursor: pointer;\n}\n.menububble__button:last-child {\n      margin-right: 0;\n}\n.menububble__button:hover {\n      background-color: rgba(255, 255, 255, 0.1);\n}\n.menububble__button.is-active {\n      background-color: rgba(255, 255, 255, 0.2);\n}\n.menububble__form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.menububble__input {\n    font: inherit;\n    border: none;\n    background: transparent;\n    color: #ffffff;\n}\n.admin-editor__container {\n  max-width: 100%;\n  margin: 0;\n  background-color: #f7f7f7;\n  border-radius: 10px;\n  padding: 1rem;\n  min-height: 40vh;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  background-image: none;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n.admin-editor__container__content {\n    min-height: 40vh;\n}\n.admin-editor__container img {\n    max-width: 100%;\n}\n.ProseMirror-focused {\n  outline: none;\n}\n", ""]);
+exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*,\n*::before,\n*::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle, aside, figcaption, figure, footer, header, hgroup, main, nav, section {\n  display: block;\n}\nbody {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"]:focus {\n  outline: 0 !important;\n}\nhr {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1, h2, h3, h4, h5, h6 {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title],\nabbr[data-original-title] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol,\nul,\ndl {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol,\nul ul,\nol ul,\nul ol {\n  margin-bottom: 0;\n}\ndt {\n  font-weight: 700;\n}\ndd {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote {\n  margin: 0 0 1rem;\n}\ndfn {\n  font-style: italic;\n}\nb,\nstrong {\n  font-weight: bolder;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -.25em;\n}\nsup {\n  top: -.5em;\n}\na {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre,\ncode,\nkbd,\nsamp {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure {\n  margin: 0 0 1rem;\n}\nimg {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable {\n  border-collapse: collapse;\n}\ncaption {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth {\n  text-align: inherit;\n}\nlabel {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton {\n  border-radius: 0;\n}\nbutton:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput,\nbutton,\nselect,\noptgroup,\ntextarea {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton,\ninput {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"],\ninput[type=\"checkbox\"] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"],\ninput[type=\"time\"],\ninput[type=\"datetime-local\"],\ninput[type=\"month\"] {\n  -webkit-appearance: listbox;\n}\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress {\n  vertical-align: baseline;\n}\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput {\n  display: inline-block;\n}\nsummary {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate {\n  display: none;\n}\n[hidden] {\n  display: none !important;\n}\n.editor * {\n  margin: 0;\n  padding: 0;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-text-size-adjust: 100%;\n     -moz-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n          text-size-adjust: 100%;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n  -webkit-touch-callout: none;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-rendering: optimizeLegibility;\n}\n.editor *:focus {\n    outline: none;\n}\n.editor *::after,\n.editor *::before {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.editor a {\n  color: inherit;\n}\n.editor blockquote,\n.editor h1,\n.editor h2,\n.editor h3,\n.editor ol,\n.editor p,\n.editor pre,\n.editor ul {\n  margin: 1rem 0;\n}\n.editor blockquote:first-child,\n  .editor h1:first-child,\n  .editor h2:first-child,\n  .editor h3:first-child,\n  .editor ol:first-child,\n  .editor p:first-child,\n  .editor pre:first-child,\n  .editor ul:first-child {\n    margin-top: 0;\n}\n.editor blockquote:last-child,\n  .editor h1:last-child,\n  .editor h2:last-child,\n  .editor h3:last-child,\n  .editor ol:last-child,\n  .editor p:last-child,\n  .editor pre:last-child,\n  .editor ul:last-child {\n    margin-bottom: 0;\n}\n.editor h1,\n.editor h2,\n.editor h3 {\n  line-height: 1.3;\n}\n.editor .button {\n  font-weight: bold;\n  display: -webkit-inline-box;\n  display: -ms-inline-flexbox;\n  display: inline-flex;\n  background: transparent;\n  border: 0;\n  color: #000000;\n  padding: 0.2rem 0.5rem;\n  margin-right: 0.2rem;\n  border-radius: 3px;\n  cursor: pointer;\n  background-color: rgba(0, 0, 0, 0.1);\n}\n.editor .message {\n  background-color: rgba(0, 0, 0, 0.05);\n  color: rgba(0, 0, 0, 0.7);\n  padding: 1rem;\n  border-radius: 6px;\n  margin-bottom: 1.5rem;\n  font-style: italic;\n}\n.editor {\n  position: relative;\n  max-width: 30rem;\n  margin: 0 auto 5rem;\n}\n.editor__content {\n    word-wrap: break-word;\n}\n.editor__content * {\n      caret-color: currentColor;\n}\n.editor__content pre {\n      padding: 0.7rem 1rem;\n      border-radius: 5px;\n      background: #000000;\n      color: #ffffff;\n      font-size: 0.8rem;\n      overflow-x: auto;\n}\n.editor__content pre code {\n        display: block;\n}\n.editor__content p code {\n      display: inline-block;\n      padding: 0 0.4rem;\n      border-radius: 5px;\n      font-size: 0.8rem;\n      font-weight: bold;\n      background: rgba(0, 0, 0, 0.1);\n      color: rgba(0, 0, 0, 0.8);\n}\n.editor__content ol,\n    .editor__content ul {\n      padding-left: 1rem;\n}\n.editor__content li > ol,\n    .editor__content li > p,\n    .editor__content li > ul {\n      margin: 0;\n}\n.editor__content a {\n      color: inherit;\n}\n.editor__content blockquote {\n      border-left: 3px solid rgba(0, 0, 0, 0.1);\n      color: rgba(0, 0, 0, 0.8);\n      padding-left: 0.8rem;\n      font-style: italic;\n}\n.editor__content blockquote p {\n        margin: 0;\n}\n.editor__content img {\n      max-width: 100%;\n      border-radius: 3px;\n}\n.editor__content table {\n      border-collapse: collapse;\n      table-layout: fixed;\n      width: 100%;\n      margin: 0;\n      overflow: hidden;\n}\n.editor__content table td,\n      .editor__content table th {\n        min-width: 1em;\n        border: 2px solid #dddddd;\n        padding: 3px 5px;\n        vertical-align: top;\n        -webkit-box-sizing: border-box;\n                box-sizing: border-box;\n        position: relative;\n}\n.editor__content table td > *,\n        .editor__content table th > * {\n          margin-bottom: 0;\n}\n.editor__content table th {\n        font-weight: bold;\n        text-align: left;\n}\n.editor__content table .selectedCell:after {\n        z-index: 2;\n        position: absolute;\n        content: \"\";\n        left: 0;\n        right: 0;\n        top: 0;\n        bottom: 0;\n        background: rgba(200, 200, 255, 0.4);\n        pointer-events: none;\n}\n.editor__content table .column-resize-handle {\n        position: absolute;\n        right: -2px;\n        top: 0;\n        bottom: 0;\n        width: 4px;\n        z-index: 20;\n        background-color: #adf;\n        pointer-events: none;\n}\n.editor__content .tableWrapper {\n      margin: 1em 0;\n      overflow-x: auto;\n}\n.editor__content .resize-cursor {\n      cursor: ew-resize;\n      cursor: col-resize;\n}\n.menubar {\n  margin-bottom: 1rem;\n  -webkit-transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;\n  transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;\n  background-color: rgba(233, 236, 239, 0.5);\n  padding: 1rem;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.menubar.is-hidden {\n    visibility: hidden;\n    opacity: 0;\n}\n.menubar.is-focused {\n    visibility: visible;\n    opacity: 1;\n    -webkit-transition: visibility 0.2s, opacity 0.2s;\n    transition: visibility 0.2s, opacity 0.2s;\n}\n.menubar__button {\n    display: block;\n    border-radius: 0;\n    border: 0;\n    background: #7C828E;\n    text-transform: uppercase;\n    font-weight: 600;\n    font-size: 0.75rem;\n    color: #fff;\n    padding: 0.375rem 0.75rem;\n    margin-right: 0.2rem;\n    cursor: pointer;\n}\n.menubar__button:hover {\n      background-color: #40444a;\n}\n.menubar__button.is-active {\n      background-color: #525D6E;\n}\n.menubar__right {\n    margin-left: auto;\n}\n.menubar__spacer {\n    margin-right: 1rem;\n    margin-left: 1rem;\n}\n.menububble {\n  position: absolute;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  z-index: 20;\n  background: #000000;\n  border-radius: 5px;\n  padding: 0.3rem;\n  margin-bottom: 0.5rem;\n  -webkit-transform: translateX(-50%);\n          transform: translateX(-50%);\n  visibility: hidden;\n  opacity: 0;\n  -webkit-transition: opacity 0.2s, visibility 0.2s;\n  transition: opacity 0.2s, visibility 0.2s;\n}\n.menububble.is-active {\n    opacity: 1;\n    visibility: visible;\n}\n.menububble__button {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    background: transparent;\n    border: 0;\n    color: #ffffff;\n    padding: 0.2rem 0.5rem;\n    margin-right: 0.2rem;\n    border-radius: 3px;\n    cursor: pointer;\n}\n.menububble__button:last-child {\n      margin-right: 0;\n}\n.menububble__button:hover {\n      background-color: rgba(255, 255, 255, 0.1);\n}\n.menububble__button.is-active {\n      background-color: rgba(255, 255, 255, 0.2);\n}\n.menububble__form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.menububble__input {\n    font: inherit;\n    border: none;\n    background: transparent;\n    color: #ffffff;\n}\n.a-text-editor__container {\n  max-width: 100%;\n  margin: 0;\n  background-color: #f7f7f7;\n  border-radius: 10px;\n  padding: 1rem;\n  min-height: 40vh;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  background-image: none;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  -webkit-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n}\n.a-text-editor__container__content {\n    min-height: 40vh;\n}\n.a-text-editor__container img {\n    max-width: 100%;\n}\n.ProseMirror-focused {\n  outline: none;\n}\n", ""]);
 
 // exports
 
@@ -82492,6 +82492,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tiptap__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__plugins_Iframe__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__plugins_Link__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__plugins_Image__ = __webpack_require__(207);
 //
 //
 //
@@ -82630,6 +82632,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 
@@ -82656,42 +82673,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       html: null,
       json: null,
       linkUrl: null,
+      linkTarget: null,
       linkMenuIsActive: false
     };
-  },
-  computed: {
-    hasLabelClass: function hasLabelClass() {
-      if (this.hasLabel) {
-        return 'col-md-10';
-      }
-
-      return 'col-12';
-    }
   },
   methods: {
     init: function init() {
       var _this = this;
 
       this.editor = new __WEBPACK_IMPORTED_MODULE_0_tiptap__["a" /* Editor */]({
-        extensions: [new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["a" /* Blockquote */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["c" /* BulletList */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["e" /* CodeBlock */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["f" /* HardBreak */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["g" /* Heading */]({
+        extensions: [new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["a" /* Blockquote */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["b" /* Bold */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["c" /* BulletList */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["d" /* Code */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["e" /* CodeBlock */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["f" /* HardBreak */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["g" /* Heading */]({
           levels: [1, 2, 3]
-        }), // new Iframe(),
-        new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["j" /* Image */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["i" /* HorizontalRule */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["m" /* ListItem */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["n" /* OrderedList */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["p" /* TodoItem */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["q" /* TodoList */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["l" /* Link */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["b" /* Bold */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["d" /* Code */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["k" /* Italic */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["o" /* Strike */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["r" /* Underline */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["h" /* History */]()],
-        content: ''
-      }); // console.log(this.initial);
-
+        }), new __WEBPACK_IMPORTED_MODULE_2__plugins_Iframe__["a" /* default */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["h" /* History */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["i" /* HorizontalRule */](), new __WEBPACK_IMPORTED_MODULE_4__plugins_Image__["a" /* default */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["j" /* Italic */](), new __WEBPACK_IMPORTED_MODULE_3__plugins_Link__["a" /* default */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["k" /* ListItem */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["l" /* OrderedList */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["m" /* Strike */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["n" /* TodoItem */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["o" /* TodoList */](), new __WEBPACK_IMPORTED_MODULE_1_tiptap_extensions__["p" /* Underline */]()],
+        content: this.initial ? this.initial : ''
+      });
       this.editor.on('update', function (e) {
         _this.html = e.getHTML();
         _this.json = e.getJSON();
 
-        _this.$emit('update', _this.json, _this.html); // console.log('updated');
-
+        _this.$emit('update', _this.json, _this.html);
       });
     },
     showLinkMenu: function showLinkMenu(attrs) {
       var _this2 = this;
 
+      console.log('show link menu');
       this.linkUrl = attrs.href;
+      this.linkTarget = attrs.href;
       this.linkMenuIsActive = true;
       this.$nextTick(function () {
         _this2.$refs.linkInput.focus();
@@ -82699,11 +82707,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     hideLinkMenu: function hideLinkMenu() {
       this.linkUrl = null;
+      this.linkTarget = null;
       this.linkMenuIsActive = false;
     },
-    setLinkUrl: function setLinkUrl(command, url) {
+    setLinkUrl: function setLinkUrl(command, url, target) {
+      var formattedTarget = '_self';
+
+      if (target) {
+        formattedTarget = '_blank';
+      }
+
       command({
-        href: url
+        href: url,
+        target: formattedTarget
       });
       this.hideLinkMenu();
       this.editor.focus();
@@ -82711,6 +82727,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     focusEditor: function focusEditor() {
       if (this.editor) {
         this.editor.focus();
+      }
+    },
+    showImagePrompt: function showImagePrompt(command) {
+      var src = prompt('Inserire l\'url dell\'immagine');
+
+      if (src !== null) {
+        command({
+          src: src
+        });
       }
     }
   },
@@ -83356,24 +83381,24 @@ keyName.shift = shift
 /* unused harmony export Highlight */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return History; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return HorizontalRule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return Image; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return Italic; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return Link; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return ListItem; });
+/* unused harmony export Image */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return Italic; });
+/* unused harmony export Link */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return ListItem; });
 /* unused harmony export Mention */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return OrderedList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return OrderedList; });
 /* unused harmony export Placeholder */
 /* unused harmony export Search */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return Strike; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return Strike; });
 /* unused harmony export Suggestions */
 /* unused harmony export Table */
 /* unused harmony export TableCell */
 /* unused harmony export TableHeader */
 /* unused harmony export TableRow */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return TodoItem; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return TodoList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return TodoItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return TodoList; });
 /* unused harmony export TrailingNode */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return Underline; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return Underline; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tiptap__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiptap_commands__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lowlight_lib_core__ = __webpack_require__(128);
@@ -88877,7 +88902,7 @@ module.exports = RopeSequence
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export default */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Iframe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tiptap__ = __webpack_require__(49);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -88978,169 +89003,336 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "admin-editor" }, [
-    this.editor
-      ? _c(
-          "div",
-          {
-            class: _vm.hasLabelClass,
-            on: {
-              click: function($event) {
-                $event.preventDefault()
-                return _vm.focusEditor($event)
+  return _c("div", { staticClass: "a-text-editor" }, [
+    _c(
+      "div",
+      { staticClass: "a-text-editor__container editor" },
+      [
+        _c("editor-menu-bar", {
+          attrs: { editor: _vm.editor },
+          scopedSlots: _vm._u([
+            {
+              key: "default",
+              fn: function(ref) {
+                var commands = ref.commands
+                var isActive = ref.isActive
+                return [
+                  _c("div", { staticClass: "menubar" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button",
+                        class: { "is-active": isActive.bold() },
+                        on: { click: commands.bold }
+                      },
+                      [_vm._v("\n                    B\n                ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button",
+                        class: { "is-active": isActive.italic() },
+                        on: { click: commands.italic }
+                      },
+                      [_vm._v("\n                    I\n                ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button",
+                        class: { "is-active": isActive.strike() },
+                        on: { click: commands.strike }
+                      },
+                      [_vm._v("\n                    S\n                ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button",
+                        class: { "is-active": isActive.underline() },
+                        on: { click: commands.underline }
+                      },
+                      [_vm._v("\n                    U\n                ")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "menubar__spacer" }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button",
+                        class: { "is-active": isActive.bullet_list() },
+                        on: { click: commands.bullet_list }
+                      },
+                      [_vm._v("\n                    Lista\n                ")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "menubar__spacer" }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button",
+                        class: { "is-active": isActive.heading({ level: 1 }) },
+                        on: {
+                          click: function($event) {
+                            return commands.heading({ level: 1 })
+                          }
+                        }
+                      },
+                      [_vm._v("\n                    H1\n                ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button",
+                        class: { "is-active": isActive.heading({ level: 2 }) },
+                        on: {
+                          click: function($event) {
+                            return commands.heading({ level: 2 })
+                          }
+                        }
+                      },
+                      [_vm._v("\n                    H2\n                ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button",
+                        class: { "is-active": isActive.heading({ level: 3 }) },
+                        on: {
+                          click: function($event) {
+                            return commands.heading({ level: 3 })
+                          }
+                        }
+                      },
+                      [_vm._v("\n                    H3\n                ")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "menubar__button menubar__right",
+                        class: { "is-active": isActive.image() },
+                        on: {
+                          click: function($event) {
+                            return _vm.showImagePrompt(commands.image)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                    Aggiungi Immagine\n                "
+                        )
+                      ]
+                    )
+                  ])
+                ]
               }
             }
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "admin-editor__container" },
-              [
-                _vm._v(
-                  '"{\n                commands,\n                isActive\n                }"\n            >\n                '
-                ),
-                _c("div", { staticClass: "menubar" }, [
+          ])
+        }),
+        _vm._v(" "),
+        _c("editor-menu-bubble", {
+          staticClass: "menububble",
+          attrs: { editor: _vm.editor },
+          on: { hide: _vm.hideLinkMenu },
+          scopedSlots: _vm._u([
+            {
+              key: "default",
+              fn: function(ref) {
+                var commands = ref.commands
+                var isActive = ref.isActive
+                var getMarkAttrs = ref.getMarkAttrs
+                var menu = ref.menu
+                return [
                   _c(
-                    "button",
+                    "div",
                     {
-                      staticClass: "menubar__button",
-                      class: { "is-active": _vm.isActive.bold() },
-                      on: { click: _vm.commands.bold }
+                      staticClass: "menububble",
+                      class: { "is-active": menu.isActive },
+                      style:
+                        "left: " +
+                        menu.left +
+                        "px; bottom: " +
+                        menu.bottom +
+                        "px;"
                     },
                     [
-                      _vm._v(
-                        "\n                        B\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "menubar__button",
-                      class: { "is-active": _vm.isActive.italic() },
-                      on: { click: _vm.commands.italic }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        I\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "menubar__button",
-                      class: { "is-active": _vm.isActive.strike() },
-                      on: { click: _vm.commands.strike }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        S\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "menubar__button",
-                      class: { "is-active": _vm.isActive.underline() },
-                      on: { click: _vm.commands.underline }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        U\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "menubar__button",
-                      class: { "is-active": _vm.isActive.bullet_list() },
-                      on: { click: _vm.commands.bullet_list }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        List\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "menubar__button",
-                      class: {
-                        "is-active": _vm.isActive.heading({ level: 1 })
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.commands.heading({ level: 1 })
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        H1\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "menubar__button",
-                      class: {
-                        "is-active": _vm.isActive.heading({ level: 2 })
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.commands.heading({ level: 2 })
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        H2\n                    "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "menubar__button",
-                      class: {
-                        "is-active": _vm.isActive.heading({ level: 3 })
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.commands.heading({ level: 3 })
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                        H3\n                    "
-                      )
-                    ]
+                      _vm.linkMenuIsActive
+                        ? _c(
+                            "form",
+                            {
+                              staticClass: "menububble__form",
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.setLinkUrl(
+                                    commands.link,
+                                    _vm.linkUrl,
+                                    _vm.linkTarget
+                                  )
+                                }
+                              }
+                            },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.linkUrl,
+                                    expression: "linkUrl"
+                                  }
+                                ],
+                                ref: "linkInput",
+                                staticClass: "menububble__input",
+                                attrs: {
+                                  type: "text",
+                                  placeholder: "https://"
+                                },
+                                domProps: { value: _vm.linkUrl },
+                                on: {
+                                  keydown: function($event) {
+                                    if (
+                                      !$event.type.indexOf("key") &&
+                                      _vm._k(
+                                        $event.keyCode,
+                                        "esc",
+                                        27,
+                                        $event.key,
+                                        ["Esc", "Escape"]
+                                      )
+                                    ) {
+                                      return null
+                                    }
+                                    return _vm.hideLinkMenu($event)
+                                  },
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.linkUrl = $event.target.value
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "text-white m-2" }, [
+                                _vm._v("Esterno?")
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "switch" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.linkTarget,
+                                      expression: "linkTarget"
+                                    }
+                                  ],
+                                  staticClass: "switch",
+                                  attrs: {
+                                    type: "checkbox",
+                                    id: "link-target"
+                                  },
+                                  domProps: {
+                                    checked: Array.isArray(_vm.linkTarget)
+                                      ? _vm._i(_vm.linkTarget, null) > -1
+                                      : _vm.linkTarget
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      var $$a = _vm.linkTarget,
+                                        $$el = $event.target,
+                                        $$c = $$el.checked ? true : false
+                                      if (Array.isArray($$a)) {
+                                        var $$v = null,
+                                          $$i = _vm._i($$a, $$v)
+                                        if ($$el.checked) {
+                                          $$i < 0 &&
+                                            (_vm.linkTarget = $$a.concat([$$v]))
+                                        } else {
+                                          $$i > -1 &&
+                                            (_vm.linkTarget = $$a
+                                              .slice(0, $$i)
+                                              .concat($$a.slice($$i + 1)))
+                                        }
+                                      } else {
+                                        _vm.linkTarget = $$c
+                                      }
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("label", { attrs: { for: "link-target" } })
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "menububble__button",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.setLinkUrl(commands.link, null)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                        Elimina\n                    "
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        : [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "menububble__button",
+                                class: { "is-active": isActive.link() },
+                                on: {
+                                  click: function($event) {
+                                    _vm.showLinkMenu(getMarkAttrs("link"))
+                                  }
+                                }
+                              },
+                              [
+                                _c("span", [
+                                  _vm._v(
+                                    _vm._s(
+                                      isActive.link()
+                                        ? "Modifica Link"
+                                        : "Aggiungi Link"
+                                    )
+                                  )
+                                ])
+                              ]
+                            )
+                          ]
+                    ],
+                    2
                   )
-                ]),
-                _vm._v(" "),
-                _c("editor-content", {
-                  staticClass: "admin-editor__content",
-                  attrs: { editor: _vm.editor }
-                })
-              ],
-              1
-            )
-          ]
-        )
-      : _vm._e()
+                ]
+              }
+            }
+          ])
+        }),
+        _vm._v(" "),
+        _c("editor-content", {
+          staticClass: "a-text-editor__content",
+          attrs: { editor: _vm.editor }
+        })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -89277,7 +89469,7 @@ var render = function() {
               { staticClass: "form-group" },
               [
                 _c("label", { attrs: { for: "content" } }, [
-                  _vm._v("Descrizione")
+                  _vm._v("Contenuto")
                 ]),
                 _vm._v(" "),
                 _c("text-editor")
@@ -89730,6 +89922,368 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Link; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tiptap__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiptap_commands__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_tiptap_utils__ = __webpack_require__(53);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var Link =
+/*#__PURE__*/
+function (_Mark) {
+  _inherits(Link, _Mark);
+
+  function Link() {
+    _classCallCheck(this, Link);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Link).apply(this, arguments));
+  }
+
+  _createClass(Link, [{
+    key: "commands",
+    value: function commands(_ref) {
+      var type = _ref.type;
+      return function (attrs) {
+        console.log(attrs);
+
+        if (attrs.href) {
+          return Object(__WEBPACK_IMPORTED_MODULE_1_tiptap_commands__["t" /* updateMark */])(type, attrs);
+        }
+
+        return Object(__WEBPACK_IMPORTED_MODULE_1_tiptap_commands__["i" /* removeMark */])(type);
+      };
+    }
+  }, {
+    key: "pasteRules",
+    value: function pasteRules(_ref2) {
+      var type = _ref2.type;
+      return [Object(__WEBPACK_IMPORTED_MODULE_1_tiptap_commands__["h" /* pasteRule */])(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-zA-Z]{2,}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/g, type, function (url) {
+        return {
+          href: url
+        };
+      })];
+    }
+  }, {
+    key: "name",
+    get: function get() {
+      return 'link';
+    }
+  }, {
+    key: "schema",
+    get: function get() {
+      return {
+        attrs: {
+          href: {
+            default: null
+          },
+          target: {
+            default: '_self'
+          }
+        },
+        inclusive: false,
+        parseDOM: [{
+          tag: 'a[href][target]',
+          getAttrs: function getAttrs(dom) {
+            return {
+              href: dom.getAttribute('href'),
+              target: dom.getAttribute('target')
+            };
+          }
+        }],
+        toDOM: function toDOM(node) {
+          return ['a', _objectSpread({}, node.attrs, {
+            rel: 'noopener noreferrer nofollow'
+          }), 0];
+        }
+      };
+    }
+  }, {
+    key: "plugins",
+    get: function get() {
+      return [new __WEBPACK_IMPORTED_MODULE_0_tiptap__["h" /* Plugin */]({
+        props: {
+          handleClick: function handleClick(view, pos, event) {
+            var schema = view.state.schema;
+            var attrs = Object(__WEBPACK_IMPORTED_MODULE_2_tiptap_utils__["a" /* getMarkAttrs */])(view.state, schema.marks.link);
+            console.log('attributi', attrs);
+
+            if (attrs.href && event.target instanceof HTMLAnchorElement) {
+              event.stopPropagation();
+              window.open(attrs.href, attrs.target);
+            }
+          }
+        }
+      })];
+    }
+  }]);
+
+  return Link;
+}(__WEBPACK_IMPORTED_MODULE_0_tiptap__["f" /* Mark */]);
+
+
+
+/***/ }),
+/* 207 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Image; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tiptap__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_tiptap_commands__ = __webpack_require__(64);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+/**
+ * Matches following attributes in Markdown-typed image: [, alt, src, title]
+ *
+ * Example:
+ * ![Lorem](image.jpg) -> [, "Lorem", "image.jpg"]
+ * ![](image.jpg "Ipsum") -> [, "", "image.jpg", "Ipsum"]
+ * ![Lorem](image.jpg "Ipsum") -> [, "Lorem", "image.jpg", "Ipsum"]
+ */
+
+var IMAGE_INPUT_REGEX = /!\[(.+|:?)\]\((\S+)(?:(?:\s+)["'](\S+)["'])?\)/;
+
+var Image =
+/*#__PURE__*/
+function (_Node) {
+  _inherits(Image, _Node);
+
+  function Image() {
+    _classCallCheck(this, Image);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Image).apply(this, arguments));
+  }
+
+  _createClass(Image, [{
+    key: "commands",
+    value: function commands(_ref) {
+      var type = _ref.type;
+      return function (attrs) {
+        return function (state, dispatch) {
+          var selection = state.selection;
+          var position = selection.$cursor ? selection.$cursor.pos : selection.$to.pos;
+          var node = type.create(attrs);
+          var transaction = state.tr.insert(position, node);
+          dispatch(transaction);
+        };
+      };
+    }
+  }, {
+    key: "inputRules",
+    value: function inputRules(_ref2) {
+      var type = _ref2.type;
+      return [Object(__WEBPACK_IMPORTED_MODULE_1_tiptap_commands__["g" /* nodeInputRule */])(IMAGE_INPUT_REGEX, type, function (match) {
+        var _match = _slicedToArray(match, 4),
+            alt = _match[1],
+            src = _match[2],
+            title = _match[3];
+
+        return {
+          src: src,
+          alt: alt,
+          title: title
+        };
+      })];
+    }
+  }, {
+    key: "name",
+    get: function get() {
+      return 'image';
+    }
+  }, {
+    key: "schema",
+    get: function get() {
+      return {
+        inline: true,
+        attrs: {
+          src: {},
+          alt: {
+            default: null
+          },
+          title: {
+            default: null
+          }
+        },
+        group: 'inline',
+        draggable: true,
+        parseDOM: [{
+          tag: 'img[src]',
+          getAttrs: function getAttrs(dom) {
+            return {
+              src: dom.getAttribute('src'),
+              title: dom.getAttribute('title'),
+              alt: dom.getAttribute('alt')
+            };
+          }
+        }],
+        toDOM: function toDOM(node) {
+          return ['img', node.attrs];
+        }
+      };
+    }
+  }, {
+    key: "plugins",
+    get: function get() {
+      return [new __WEBPACK_IMPORTED_MODULE_0_tiptap__["h" /* Plugin */]({
+        props: {
+          handleDOMEvents: {
+            drop: function drop(view, event) {
+              var hasFiles = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files.length;
+
+              if (!hasFiles) {
+                return;
+              }
+
+              var images = Array.from(event.dataTransfer.files).filter(function (file) {
+                return /image/i.test(file.type);
+              });
+
+              if (images.length === 0) {
+                return;
+              }
+
+              event.preventDefault();
+              var schema = view.state.schema;
+              var coordinates = view.posAtCoords({
+                left: event.clientX,
+                top: event.clientY
+              });
+              images.forEach(function (image) {
+                var reader = new FileReader();
+
+                reader.onload = function (readerEvent) {
+                  var node = schema.nodes.image.create({
+                    src: readerEvent.target.result
+                  });
+                  var transaction = view.state.tr.insert(coordinates.pos, node);
+                  view.dispatch(transaction);
+                };
+
+                reader.readAsDataURL(image);
+              });
+            }
+          }
+        }
+      })];
+    }
+  }]);
+
+  return Image;
+}(__WEBPACK_IMPORTED_MODULE_0_tiptap__["g" /* Node */]);
+
+
 
 /***/ })
 /******/ ]);

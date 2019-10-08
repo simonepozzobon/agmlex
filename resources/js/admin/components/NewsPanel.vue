@@ -50,7 +50,7 @@
         <div class="col-12">
             <block>
                 <div class="form-group">
-                    <label for="content">Descrizione</label>
+                    <label for="content">Contenuto</label>
                     <text-editor />
                 </div>
             </block>
