@@ -1,9 +1,26 @@
 <template>
-<div class="a-users">
+<div class="a-professionals container">
     <div class="row">
+        <div
+            class="col-md-6"
+            v-for="professional in this.professionals"
+            :key="professional.id"
+        >
+            <block>
+                <user
+                    :user="professional"
+                    :fields="fields"
+                    @deleted="deletedProfessional"
+                    @update="updatedProfessional"
+                />
+            </block>
+        </div>
         <div class="col-md-6">
             <block>
-                <user />
+                <new-user
+                    :fields="fields"
+                    @added="addedProfessional"
+                />
             </block>
         </div>
     </div>
@@ -13,22 +30,42 @@
 <script>
 import Block from '../components/Block.vue'
 import User from '../components/User.vue'
+import NewUser from '../components/NewUser.vue'
 
 export default {
     name: 'Professionisti',
     components: {
         Block,
         User,
+        NewUser,
     },
     data: function () {
         return {
-            users: []
+            professionals: [],
+            fields: [],
         }
     },
+    methods: {
+        deletedProfessional: function (id) {
+            let idx = this.professionals.findIndex(professional => professional.id == id)
+            if (idx > -1) {
+                this.professionals.splice(idx, 1)
+            }
+        },
+        updatedProfessional: function (newProfessional) {
+            let idx = this.professionals.findIndex(professional => professional.id == newProfessional.id)
+            if (idx > -1) {
+                this.professionals.splice(idx, 1, newProfessional)
+            }
+        },
+        addedProfessional: function (professional) {
+            this.professionals.push(professional)
+        },
+    },
     created: function () {
-        this.$http.get('/api/admin/users').then(response => {
-            console.log(response.data);
-            this.users = response.data.users
+        this.$http.get('/api/admin/professionals').then(response => {
+            this.professionals = response.data.professionals
+            this.fields = response.data.fields
         })
     },
 }
@@ -37,7 +74,11 @@ export default {
 <style lang="scss" scoped>
 @import '~styles/shared';
 
-.a-users {
+.a-professionals {
     padding: $spacer * 2;
+
+    .col-md-6 {
+        margin-bottom: $spacer * 1.618;
+    }
 }
 </style>

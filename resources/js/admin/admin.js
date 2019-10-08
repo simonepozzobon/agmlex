@@ -1,3 +1,5 @@
+require('../bootstrap');
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import axios from 'axios'
@@ -13,6 +15,8 @@ Vue.use(VueRouter)
 
 
 import MainTemplate from './containers/MainTemplate.vue'
+
+Vue.prototype.$http = axios
 
 const admin = new Vue({
     router,

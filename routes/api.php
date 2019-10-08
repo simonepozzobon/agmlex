@@ -13,6 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:api')->get(
+    '/user', function (Request $request) {
+        return $request->user();
+    }
+);
+
+
+Route::prefix('admin')->group(
+    function () {
+        Route::get('professionals', 'ProfessionalController@get_professionals');
+        Route::post('new-professional', 'ProfessionalController@create_professional');
+        Route::post('edit-professional', 'ProfessionalController@edit_professional');
+        Route::delete('professional/{id}', 'ProfessionalController@delete_professional');
+    }
+);
