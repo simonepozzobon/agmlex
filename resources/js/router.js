@@ -2,6 +2,7 @@ import Home from './views/Home.vue'
 import Professionisti from './views/Professionisti.vue'
 import Competenze from './views/Competenze.vue'
 import News from './views/News.vue'
+import NewsSingle from './views/NewsSingle.vue'
 
 
 const routes = [{
@@ -23,6 +24,11 @@ const routes = [{
         path: '/news',
         name: 'news',
         component: News,
+    },
+    {
+        path: '/news/:slug',
+        name: 'news-single',
+        component: NewsSingle,
     }
 ]
 

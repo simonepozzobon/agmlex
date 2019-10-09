@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get(
     }
 );
 
+Route::get('news/{slug}', 'HomeController@get_news');
+
 
 Route::prefix('admin')->group(
     function () {

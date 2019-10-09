@@ -52034,6 +52034,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__containers_MainTemplate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__containers_MainTemplate_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__router__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_axios__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_axios__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -52045,12 +52047,14 @@ __webpack_require__(25);
 
 
 
+
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]);
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
   mode: 'history',
   base: __dirname,
   routes: __WEBPACK_IMPORTED_MODULE_3__router__["a" /* default */]
 });
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.prototype.$http = __WEBPACK_IMPORTED_MODULE_4_axios___default.a;
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   router: router,
   components: {
@@ -52081,6 +52085,12 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
           name: name
         });
       }
+    },
+    goToWithParams: function goToWithParams(name, params) {
+      this.$router.push({
+        name: name,
+        params: params
+      });
     }
   },
   mounted: function mounted() {
@@ -52919,6 +52929,9 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_Competenze_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_Competenze_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_News_vue__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_News_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_News_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_NewsSingle_vue__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_NewsSingle_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_NewsSingle_vue__);
+
 
 
 
@@ -52939,6 +52952,10 @@ var routes = [{
   path: '/news',
   name: 'news',
   component: __WEBPACK_IMPORTED_MODULE_3__views_News_vue___default.a
+}, {
+  path: '/news/:slug',
+  name: 'news-single',
+  component: __WEBPACK_IMPORTED_MODULE_4__views_NewsSingle_vue___default.a
 }];
 /* harmony default export */ __webpack_exports__["a"] = (routes);
 
@@ -54321,6 +54338,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -54343,6 +54368,11 @@ var clip = __webpack_require__(345);
   methods: {
     setContainerHeight: function setContainerHeight(value) {
       this.$refs.container.style.minHeight = value + 'px';
+    },
+    openNews: function openNews(id, slug) {
+      this.$root.goToWithParams('news-single', {
+        slug: slug
+      });
     }
   },
   filters: {
@@ -71539,7 +71569,23 @@ var render = function() {
               })
             ],
             1
-          )
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "news__actions" }, [
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.openNews(news.id, news.slug)
+                  }
+                }
+              },
+              [_vm._v("\n                    Leggi di più\n                ")]
+            )
+          ])
         ])
       ])
     }),
@@ -72188,6 +72234,246 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-0d17a837", module.exports)
+  }
+}
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(352)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(354)
+/* template */
+var __vue_template__ = __webpack_require__(355)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-709f19da"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/NewsSingle.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-709f19da", Component.options)
+  } else {
+    hotAPI.reload("data-v-709f19da", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 352 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(353);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("a0f487d4", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-709f19da\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewsSingle.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-709f19da\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewsSingle.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 353 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n[data-v-709f19da]:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*[data-v-709f19da],\n*[data-v-709f19da]::before,\n*[data-v-709f19da]::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-709f19da] {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle[data-v-709f19da], aside[data-v-709f19da], figcaption[data-v-709f19da], figure[data-v-709f19da], footer[data-v-709f19da], header[data-v-709f19da], hgroup[data-v-709f19da], main[data-v-709f19da], nav[data-v-709f19da], section[data-v-709f19da] {\n  display: block;\n}\nbody[data-v-709f19da] {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"][data-v-709f19da]:focus {\n  outline: 0 !important;\n}\nhr[data-v-709f19da] {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1[data-v-709f19da], h2[data-v-709f19da], h3[data-v-709f19da], h4[data-v-709f19da], h5[data-v-709f19da], h6[data-v-709f19da] {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np[data-v-709f19da] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title][data-v-709f19da],\nabbr[data-original-title][data-v-709f19da] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress[data-v-709f19da] {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol[data-v-709f19da],\nul[data-v-709f19da],\ndl[data-v-709f19da] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol[data-v-709f19da],\nul ul[data-v-709f19da],\nol ul[data-v-709f19da],\nul ol[data-v-709f19da] {\n  margin-bottom: 0;\n}\ndt[data-v-709f19da] {\n  font-weight: 700;\n}\ndd[data-v-709f19da] {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote[data-v-709f19da] {\n  margin: 0 0 1rem;\n}\ndfn[data-v-709f19da] {\n  font-style: italic;\n}\nb[data-v-709f19da],\nstrong[data-v-709f19da] {\n  font-weight: bolder;\n}\nsmall[data-v-709f19da] {\n  font-size: 80%;\n}\nsub[data-v-709f19da],\nsup[data-v-709f19da] {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub[data-v-709f19da] {\n  bottom: -.25em;\n}\nsup[data-v-709f19da] {\n  top: -.5em;\n}\na[data-v-709f19da] {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na[data-v-709f19da]:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na[data-v-709f19da]:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na[data-v-709f19da]:not([href]):not([tabindex]):hover, a[data-v-709f19da]:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na[data-v-709f19da]:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre[data-v-709f19da],\ncode[data-v-709f19da],\nkbd[data-v-709f19da],\nsamp[data-v-709f19da] {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre[data-v-709f19da] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure[data-v-709f19da] {\n  margin: 0 0 1rem;\n}\nimg[data-v-709f19da] {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg[data-v-709f19da] {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable[data-v-709f19da] {\n  border-collapse: collapse;\n}\ncaption[data-v-709f19da] {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth[data-v-709f19da] {\n  text-align: inherit;\n}\nlabel[data-v-709f19da] {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton[data-v-709f19da] {\n  border-radius: 0;\n}\nbutton[data-v-709f19da]:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput[data-v-709f19da],\nbutton[data-v-709f19da],\nselect[data-v-709f19da],\noptgroup[data-v-709f19da],\ntextarea[data-v-709f19da] {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton[data-v-709f19da],\ninput[data-v-709f19da] {\n  overflow: visible;\n}\nbutton[data-v-709f19da],\nselect[data-v-709f19da] {\n  text-transform: none;\n}\nbutton[data-v-709f19da],\nhtml [type=\"button\"][data-v-709f19da],\n[type=\"reset\"][data-v-709f19da],\n[type=\"submit\"][data-v-709f19da] {\n  -webkit-appearance: button;\n}\nbutton[data-v-709f19da]::-moz-focus-inner,\n[type=\"button\"][data-v-709f19da]::-moz-focus-inner,\n[type=\"reset\"][data-v-709f19da]::-moz-focus-inner,\n[type=\"submit\"][data-v-709f19da]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"][data-v-709f19da],\ninput[type=\"checkbox\"][data-v-709f19da] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"][data-v-709f19da],\ninput[type=\"time\"][data-v-709f19da],\ninput[type=\"datetime-local\"][data-v-709f19da],\ninput[type=\"month\"][data-v-709f19da] {\n  -webkit-appearance: listbox;\n}\ntextarea[data-v-709f19da] {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset[data-v-709f19da] {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend[data-v-709f19da] {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress[data-v-709f19da] {\n  vertical-align: baseline;\n}\n[type=\"number\"][data-v-709f19da]::-webkit-inner-spin-button,\n[type=\"number\"][data-v-709f19da]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"][data-v-709f19da] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"][data-v-709f19da]::-webkit-search-cancel-button,\n[type=\"search\"][data-v-709f19da]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n[data-v-709f19da]::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput[data-v-709f19da] {\n  display: inline-block;\n}\nsummary[data-v-709f19da] {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate[data-v-709f19da] {\n  display: none;\n}\n[hidden][data-v-709f19da] {\n  display: none !important;\n}\n.news[data-v-709f19da] {\n  padding: 1rem;\n}\n.news__image[data-v-709f19da] {\n    margin-bottom: 1.618rem;\n}\n.news__image img[data-v-709f19da] {\n      min-width: 100%;\n      max-width: 100%;\n}\n.news__date[data-v-709f19da] {\n    text-align: right;\n    font-size: 0.875rem;\n    color: #6c757d;\n    margin-bottom: 1.618rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 354 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_HtmlComponent_vue__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_HtmlComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_HtmlComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+var clip = __webpack_require__(345);
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'News',
+  components: {
+    HtmlComponent: __WEBPACK_IMPORTED_MODULE_0__components_HtmlComponent_vue___default.a
+  },
+  data: function data() {
+    return {
+      news: null
+    };
+  },
+  watch: {
+    '$root.containerHeight': function $rootContainerHeight(value) {
+      // set te maximum height for the main container
+      this.setContainerHeight(value);
+    }
+  },
+  methods: {
+    setContainerHeight: function setContainerHeight(value) {
+      this.$refs.container.style.minHeight = value + 'px';
+    },
+    getNews: function getNews() {
+      var _this = this;
+
+      var url = '/api/news/' + this.$route.params.slug;
+      this.$http.get(url).then(function (response) {
+        _this.news = response.data.news;
+      });
+    },
+    openNews: function openNews(id, slug) {
+      this.$root.goToWithParams('news-single', {
+        slug: slug
+      });
+    }
+  },
+  filters: {
+    publishedDate: function publishedDate(date) {
+      return __WEBPACK_IMPORTED_MODULE_1_moment___default()(date).format('DD-MM-YYYY');
+    }
+  },
+  created: function created() {
+    this.getNews();
+  },
+  mounted: function mounted() {
+    this.setContainerHeight(this.$root.containerHeight);
+  }
+});
+
+/***/ }),
+/* 355 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { ref: "container", staticClass: "container-fluid" }, [
+    _vm.news
+      ? _c("div", { staticClass: "row pt-5 news" }, [
+          _c("div", { staticClass: "col-12 news__title" }, [
+            _c("h1", [_vm._v(_vm._s(this.news.title))])
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12 news__date" }, [
+            _vm._v(
+              "\n            Pubblicata il " +
+                _vm._s(_vm._f("publishedDate")(this.news.published_at)) +
+                "\n        "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12 news__image" }, [
+            _c("img", { attrs: { src: this.news.img, alt: this.news.title } })
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-12 news_content" },
+            [_c("html-component", { attrs: { html: this.news.content } })],
+            1
+          )
+        ])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [_c("hr")])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-709f19da", module.exports)
   }
 }
 

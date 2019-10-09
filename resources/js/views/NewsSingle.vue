@@ -5,38 +5,25 @@
 >
     <div
         class="row pt-5 news"
-        v-for="news in $root.news"
-        :key="news.id"
+        v-if="news"
     >
-        <div class="col-md-4 news__image">
-            <img
-                :src="news.img"
-                :alt="news.title"
-            />
+        <div class="col-12 news__title">
+            <h1>{{ this.news.title }}</h1>
         </div>
-        <div class="col-md-8 news__description">
-            <div class="news__title">
-                <h2>
-                    {{ news.title }}
-                </h2>
-            </div>
-            <div class="news__divider">
-                <hr>
-            </div>
-            <div class="news__date">
-                Pubblicata il {{ news.published_at | publishedDate }}
-            </div>
-            <div class="news__short-description">
-                <html-component :html="news.content | shortDescription" />
-            </div>
-            <div class="news__actions">
-                <a
-                    href="#"
-                    @click.prevent="openNews(news.id, news.slug)"
-                >
-                    Leggi di più
-                </a>
-            </div>
+        <div class="col-12">
+            <hr>
+        </div>
+        <div class="col-12 news__date">
+            Pubblicata il {{ this.news.published_at | publishedDate }}
+        </div>
+        <div class="col-12 news__image">
+            <img
+                :src="this.news.img"
+                :alt="this.news.title"
+            >
+        </div>
+        <div class="col-12 news_content">
+            <html-component :html="this.news.content" />
         </div>
     </div>
 </div>
@@ -53,7 +40,9 @@ export default {
         HtmlComponent,
     },
     data: function () {
-        return {}
+        return {
+            news: null
+        }
     },
     watch: {
         '$root.containerHeight': function (value) {
@@ -65,6 +54,12 @@ export default {
         setContainerHeight: function (value) {
             this.$refs.container.style.minHeight = value + 'px'
         },
+        getNews: function () {
+            let url = '/api/news/' + this.$route.params.slug
+            this.$http.get(url).then(response => {
+                this.news = response.data.news
+            })
+        },
         openNews: function (id, slug) {
             this.$root.goToWithParams('news-single', {
                 slug: slug
@@ -75,12 +70,9 @@ export default {
         publishedDate: function (date) {
             return moment(date).format('DD-MM-YYYY')
         },
-        shortDescription: function (description) {
-            return clip(description, 200, {
-                html: true,
-                maxLines: 5
-            })
-        }
+    },
+    created: function () {
+        this.getNews()
     },
     mounted: function () {
         this.setContainerHeight(this.$root.containerHeight)
@@ -95,7 +87,9 @@ export default {
     padding: $spacer;
 
     &__image {
+        margin-bottom: $spacer * 1.618;
         img {
+            min-width: 100%;
             max-width: 100%;
         }
     }
@@ -106,6 +100,7 @@ export default {
         text-align: right;
         font-size: $font-size-sm;
         color: $gray-600;
+        margin-bottom: $spacer * 1.618;
     }
 }
 </style>

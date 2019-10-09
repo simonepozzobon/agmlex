@@ -34,4 +34,14 @@ class HomeController extends Controller
 
         return view('welcome', compact('skills', 'professionals', 'newsFormatted'));
     }
+
+    public function get_news($slug)
+    {
+        $news = News::where('slug', $slug)->first();
+        $news->img = Storage::disk('local')->url($news->img);
+
+        return [
+            'news' => $news
+        ];
+    }
 }
