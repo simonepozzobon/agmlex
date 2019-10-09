@@ -32,8 +32,10 @@ Route::prefix('admin')->group(
         Route::prefix('news')->group(
             function () {
                 Route::get('/', 'NewsController@get_news');
+                Route::get('/{id}', 'NewsController@get_single_news');
                 Route::post('check-slug', 'NewsController@check_slug');
                 Route::post('create', 'NewsController@create');
+                Route::post('edit', 'NewsController@edit');
             }
         );
     }

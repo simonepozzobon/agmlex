@@ -25,6 +25,15 @@ class NewsController extends Controller
         ];
     }
 
+    public function get_single_news($id)
+    {
+        $news = News::where('id', $id)->first();
+        $news->img = Storage::disk('local')->url($news->img);
+        return [
+            'news' => $news,
+        ];
+    }
+
     public function check_slug(Request $request)
     {
         $slug = $request->slug;
@@ -67,9 +76,12 @@ class NewsController extends Controller
     {
         $news = News::find($request->id);
         $news->title = $request->title;
-        $news->slug = $request->slug;
         $news->content = $request->content;
         $news->published_at = $request->published_at;
+
+        if ($request->slug != $news->slug) {
+            $news->slug = $request->slug;
+        }
 
         if ($request->hasFile('file') && $request->file) {
             $file = $request->file('file');
@@ -79,7 +91,6 @@ class NewsController extends Controller
             $news->img = $image;
         }
 
-        $news->img = $image;
         $news->save();
 
         return [

@@ -194,6 +194,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        initial: {
+            type: String,
+            default: null,
+        },
     },
     components: {
         EditorContent,
@@ -208,6 +212,15 @@ export default {
             linkUrl: null,
             linkTarget: null,
             linkMenuIsActive: false,
+        }
+    },
+    watch: {
+        initial: function (initial) {
+            if (this.editor) {
+                this.html = this.editor.getHTML()
+                this.json = this.editor.getJSON()
+                this.$emit('update', this.json, this.html)
+            }
         }
     },
     methods: {
@@ -244,6 +257,12 @@ export default {
                 this.json = e.getJSON()
                 this.$emit('update', this.json, this.html)
             })
+
+            if (this.initial) {
+                this.html = this.editor.getHTML()
+                this.json = this.editor.getJSON()
+                this.$emit('update', this.json, this.html)
+            }
         },
         showLinkMenu: function (attrs) {
             console.log('show link menu');

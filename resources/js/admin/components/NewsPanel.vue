@@ -76,7 +76,10 @@
             <block>
                 <div class="form-group">
                     <label for="content">Contenuto</label>
-                    <text-editor @update="updateContent" />
+                    <text-editor
+                        @update="updateContent"
+                        :initial="this.initial ? this.initial.content : null"
+                    />
                 </div>
             </block>
         </div>
@@ -88,7 +91,7 @@
                     class="btn btn-primary"
                     @click.prevent="sendNews"
                 >
-                    Crea News
+                    {{ this.isEdit ? 'Salva Modifiche' : 'Crea News'}}
                 </button>
             </block>
         </div>
@@ -179,6 +182,12 @@ export default {
             type: Boolean,
             default: false,
         },
+        initial: {
+            type: Object,
+            default: function () {
+                return {}
+            },
+        },
     },
     data: function () {
         return {
@@ -203,7 +212,10 @@ export default {
             if (slug.length > 3) {
                 this.checkSlug(slug)
             }
-        }, 500)
+        }, 500),
+        initial: function (initial) {
+            this.setInitials()
+        },
     },
     computed: {
         slugIsValidClass: function () {
@@ -219,6 +231,15 @@ export default {
         },
     },
     methods: {
+        setInitials: function () {
+            if (this.isEdit) {
+                this.title = this.initial.title
+                this.slug = this.initial.slug
+                this.published_at = this.initial.published_at
+                this.hasImage = true
+                this.imageSrc = this.initial.img
+            }
+        },
         checkSlug: function (slug) {
             let data = new FormData()
             data.append('slug', slug)
@@ -276,14 +297,28 @@ export default {
             data.append('content', this.content)
             data.append('published_at', moment(this.published_at).format('YYYY-MM-DD'))
 
-            this.$http.post('/api/admin/news/create', data).then(response => {
-                console.log(response.data);
-            })
+            console.log(this.content);
+
+            if (this.isEdit == true) {
+                data.append('id', this.initial.id)
+
+                this.$http.post('/api/admin/news/edit', data).then(response => {
+                    console.log(response.data);
+                })
+            }
+            else {
+                data.append('file', this.file)
+                this.$http.post('/api/admin/news/create', data).then(response => {
+                    this.$root.goToWithParams('news-modifica', {
+                        id: response.data.news.id
+                    })
+                })
+            }
         },
     },
     created: function () {},
     mounted: function () {
-
+        this.setInitials()
     },
 }
 </script>

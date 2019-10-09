@@ -22,7 +22,10 @@
                         {{ item.title }}
                     </div>
                     <div class="a-news-single__actions">
-                        <button class="btn btn-secondary">
+                        <button
+                            class="btn btn-secondary"
+                            @click.prevent="editNews(item.id)"
+                        >
                             Modifica
                         </button>
                         <button class="btn btn-danger">
@@ -52,6 +55,13 @@ export default {
         return {
             news: []
         }
+    },
+    methods: {
+        editNews: function (id) {
+            this.$root.goToWithParams('news-modifica', {
+                id: id
+            })
+        },
     },
     filters: {
         publishedData: function (date) {

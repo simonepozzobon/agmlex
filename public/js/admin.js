@@ -79600,6 +79600,12 @@ var admin = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
           name: name
         });
       }
+    },
+    goToWithParams: function goToWithParams(name, params) {
+      this.$router.push({
+        name: name,
+        params: params
+      });
     }
   },
   mounted: function mounted() {
@@ -79624,6 +79630,9 @@ var admin = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_News_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__views_News_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_NewsCreate_vue__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__views_NewsCreate_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__views_NewsCreate_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_NewsEdit_vue__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_NewsEdit_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__views_NewsEdit_vue__);
+
 
 
 
@@ -79644,6 +79653,10 @@ var AdminRoutes = [{
   name: 'news-nuova',
   path: '/news/nuova',
   component: __WEBPACK_IMPORTED_MODULE_3__views_NewsCreate_vue___default.a
+}, {
+  name: 'news-modifica',
+  path: '/news/modifica/:id',
+  component: __WEBPACK_IMPORTED_MODULE_4__views_NewsEdit_vue___default.a
 }];
 /* harmony default export */ __webpack_exports__["a"] = (AdminRoutes);
 
@@ -82385,6 +82398,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -82398,6 +82414,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       news: []
     };
+  },
+  methods: {
+    editNews: function editNews(id) {
+      this.$root.goToWithParams('news-modifica', {
+        id: id
+      });
+    }
   },
   filters: {
     publishedData: function publishedData(date) {
@@ -82621,11 +82644,23 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "a-news-single__actions" }, [
-                    _c("button", { staticClass: "btn btn-secondary" }, [
-                      _vm._v(
-                        "\n                            Modifica\n                        "
-                      )
-                    ]),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-secondary",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.editNews(item.id)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Modifica\n                        "
+                        )
+                      ]
+                    ),
                     _vm._v(" "),
                     _c("button", { staticClass: "btn btn-danger" }, [
                       _vm._v(
@@ -83030,6 +83065,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -83049,6 +83087,12 @@ var debounce = __webpack_require__(139);
     isEdit: {
       type: Boolean,
       default: false
+    },
+    initial: {
+      type: Object,
+      default: function _default() {
+        return {};
+      }
     }
   },
   data: function data() {
@@ -83074,7 +83118,10 @@ var debounce = __webpack_require__(139);
       if (slug.length > 3) {
         this.checkSlug(slug);
       }
-    }, 500)
+    }, 500),
+    initial: function initial(_initial) {
+      this.setInitials();
+    }
   },
   computed: {
     slugIsValidClass: function slugIsValidClass() {
@@ -83088,6 +83135,15 @@ var debounce = __webpack_require__(139);
     }
   },
   methods: {
+    setInitials: function setInitials() {
+      if (this.isEdit) {
+        this.title = this.initial.title;
+        this.slug = this.initial.slug;
+        this.published_at = this.initial.published_at;
+        this.hasImage = true;
+        this.imageSrc = this.initial.img;
+      }
+    },
     checkSlug: function checkSlug(slug) {
       var _this = this;
 
@@ -83143,19 +83199,35 @@ var debounce = __webpack_require__(139);
       this.content = html;
     },
     sendNews: function sendNews() {
+      var _this4 = this;
+
       var data = new FormData();
       data.append('title', this.title);
       data.append('slug', this.slug);
       data.append('file', this.file);
       data.append('content', this.content);
       data.append('published_at', __WEBPACK_IMPORTED_MODULE_3_moment___default()(this.published_at).format('YYYY-MM-DD'));
-      this.$http.post('/api/admin/news/create', data).then(function (response) {
-        console.log(response.data);
-      });
+      console.log(this.content);
+
+      if (this.isEdit == true) {
+        data.append('id', this.initial.id);
+        this.$http.post('/api/admin/news/edit', data).then(function (response) {
+          console.log(response.data);
+        });
+      } else {
+        data.append('file', this.file);
+        this.$http.post('/api/admin/news/create', data).then(function (response) {
+          _this4.$root.goToWithParams('news-modifica', {
+            id: response.data.news.id
+          });
+        });
+      }
     }
   },
   created: function created() {},
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    this.setInitials();
+  }
 });
 
 /***/ }),
@@ -83426,6 +83498,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     hasLabel: {
       type: Boolean,
       default: false
+    },
+    initial: {
+      type: String,
+      default: null
     }
   },
   components: {
@@ -83443,6 +83519,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       linkMenuIsActive: false
     };
   },
+  watch: {
+    initial: function initial(_initial) {
+      if (this.editor) {
+        this.html = this.editor.getHTML();
+        this.json = this.editor.getJSON();
+        this.$emit('update', this.json, this.html);
+      }
+    }
+  },
   methods: {
     init: function init() {
       var _this = this;
@@ -83459,6 +83544,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         _this.$emit('update', _this.json, _this.html);
       });
+
+      if (this.initial) {
+        this.html = this.editor.getHTML();
+        this.json = this.editor.getJSON();
+        this.$emit('update', this.json, this.html);
+      }
     },
     showLinkMenu: function showLinkMenu(attrs) {
       var _this2 = this;
@@ -90987,7 +91078,12 @@ var render = function() {
                     _vm._v("Contenuto")
                   ]),
                   _vm._v(" "),
-                  _c("text-editor", { on: { update: _vm.updateContent } })
+                  _c("text-editor", {
+                    attrs: {
+                      initial: this.initial ? this.initial.content : null
+                    },
+                    on: { update: _vm.updateContent }
+                  })
                 ],
                 1
               )
@@ -91014,7 +91110,13 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n                    Crea News\n                ")]
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(this.isEdit ? "Salva Modifiche" : "Crea News") +
+                      "\n                "
+                  )
+                ]
               )
             ])
           ],
@@ -111171,6 +111273,177 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 339;
+
+/***/ }),
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(357)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(359)
+/* template */
+var __vue_template__ = __webpack_require__(360)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-0f045b5c"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/admin/views/NewsEdit.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0f045b5c", Component.options)
+  } else {
+    hotAPI.reload("data-v-0f045b5c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 357 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(358);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("04bd5bd0", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0f045b5c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewsEdit.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0f045b5c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NewsEdit.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 358 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n[data-v-0f045b5c]:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*[data-v-0f045b5c],\n*[data-v-0f045b5c]::before,\n*[data-v-0f045b5c]::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-0f045b5c] {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle[data-v-0f045b5c], aside[data-v-0f045b5c], figcaption[data-v-0f045b5c], figure[data-v-0f045b5c], footer[data-v-0f045b5c], header[data-v-0f045b5c], hgroup[data-v-0f045b5c], main[data-v-0f045b5c], nav[data-v-0f045b5c], section[data-v-0f045b5c] {\n  display: block;\n}\nbody[data-v-0f045b5c] {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"][data-v-0f045b5c]:focus {\n  outline: 0 !important;\n}\nhr[data-v-0f045b5c] {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1[data-v-0f045b5c], h2[data-v-0f045b5c], h3[data-v-0f045b5c], h4[data-v-0f045b5c], h5[data-v-0f045b5c], h6[data-v-0f045b5c] {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np[data-v-0f045b5c] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title][data-v-0f045b5c],\nabbr[data-original-title][data-v-0f045b5c] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress[data-v-0f045b5c] {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol[data-v-0f045b5c],\nul[data-v-0f045b5c],\ndl[data-v-0f045b5c] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol[data-v-0f045b5c],\nul ul[data-v-0f045b5c],\nol ul[data-v-0f045b5c],\nul ol[data-v-0f045b5c] {\n  margin-bottom: 0;\n}\ndt[data-v-0f045b5c] {\n  font-weight: 700;\n}\ndd[data-v-0f045b5c] {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote[data-v-0f045b5c] {\n  margin: 0 0 1rem;\n}\ndfn[data-v-0f045b5c] {\n  font-style: italic;\n}\nb[data-v-0f045b5c],\nstrong[data-v-0f045b5c] {\n  font-weight: bolder;\n}\nsmall[data-v-0f045b5c] {\n  font-size: 80%;\n}\nsub[data-v-0f045b5c],\nsup[data-v-0f045b5c] {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub[data-v-0f045b5c] {\n  bottom: -.25em;\n}\nsup[data-v-0f045b5c] {\n  top: -.5em;\n}\na[data-v-0f045b5c] {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na[data-v-0f045b5c]:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na[data-v-0f045b5c]:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na[data-v-0f045b5c]:not([href]):not([tabindex]):hover, a[data-v-0f045b5c]:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na[data-v-0f045b5c]:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre[data-v-0f045b5c],\ncode[data-v-0f045b5c],\nkbd[data-v-0f045b5c],\nsamp[data-v-0f045b5c] {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre[data-v-0f045b5c] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure[data-v-0f045b5c] {\n  margin: 0 0 1rem;\n}\nimg[data-v-0f045b5c] {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg[data-v-0f045b5c] {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable[data-v-0f045b5c] {\n  border-collapse: collapse;\n}\ncaption[data-v-0f045b5c] {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth[data-v-0f045b5c] {\n  text-align: inherit;\n}\nlabel[data-v-0f045b5c] {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton[data-v-0f045b5c] {\n  border-radius: 0;\n}\nbutton[data-v-0f045b5c]:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput[data-v-0f045b5c],\nbutton[data-v-0f045b5c],\nselect[data-v-0f045b5c],\noptgroup[data-v-0f045b5c],\ntextarea[data-v-0f045b5c] {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton[data-v-0f045b5c],\ninput[data-v-0f045b5c] {\n  overflow: visible;\n}\nbutton[data-v-0f045b5c],\nselect[data-v-0f045b5c] {\n  text-transform: none;\n}\nbutton[data-v-0f045b5c],\nhtml [type=\"button\"][data-v-0f045b5c],\n[type=\"reset\"][data-v-0f045b5c],\n[type=\"submit\"][data-v-0f045b5c] {\n  -webkit-appearance: button;\n}\nbutton[data-v-0f045b5c]::-moz-focus-inner,\n[type=\"button\"][data-v-0f045b5c]::-moz-focus-inner,\n[type=\"reset\"][data-v-0f045b5c]::-moz-focus-inner,\n[type=\"submit\"][data-v-0f045b5c]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"][data-v-0f045b5c],\ninput[type=\"checkbox\"][data-v-0f045b5c] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"][data-v-0f045b5c],\ninput[type=\"time\"][data-v-0f045b5c],\ninput[type=\"datetime-local\"][data-v-0f045b5c],\ninput[type=\"month\"][data-v-0f045b5c] {\n  -webkit-appearance: listbox;\n}\ntextarea[data-v-0f045b5c] {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset[data-v-0f045b5c] {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend[data-v-0f045b5c] {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress[data-v-0f045b5c] {\n  vertical-align: baseline;\n}\n[type=\"number\"][data-v-0f045b5c]::-webkit-inner-spin-button,\n[type=\"number\"][data-v-0f045b5c]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"][data-v-0f045b5c] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"][data-v-0f045b5c]::-webkit-search-cancel-button,\n[type=\"search\"][data-v-0f045b5c]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n[data-v-0f045b5c]::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput[data-v-0f045b5c] {\n  display: inline-block;\n}\nsummary[data-v-0f045b5c] {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate[data-v-0f045b5c] {\n  display: none;\n}\n[hidden][data-v-0f045b5c] {\n  display: none !important;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 359 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_NewsPanel_vue__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_NewsPanel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_NewsPanel_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'NewsCreate',
+  components: {
+    NewsPanel: __WEBPACK_IMPORTED_MODULE_0__components_NewsPanel_vue___default.a
+  },
+  data: function data() {
+    return {
+      initial: null
+    };
+  },
+  methods: {
+    getNews: function getNews() {
+      var _this = this;
+
+      this.$http.get('/api/admin/news/' + this.$route.params.id).then(function (response) {
+        console.log(response);
+        _this.initial = response.data.news;
+      });
+    }
+  },
+  created: function created() {
+    this.getNews();
+  }
+});
+
+/***/ }),
+/* 360 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.initial
+    ? _c("news-panel", { attrs: { "is-edit": true, initial: this.initial } })
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0f045b5c", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
