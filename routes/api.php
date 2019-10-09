@@ -36,6 +36,7 @@ Route::prefix('admin')->group(
                 Route::post('check-slug', 'NewsController@check_slug');
                 Route::post('create', 'NewsController@create');
                 Route::post('edit', 'NewsController@edit');
+                Route::delete('/{id}', 'NewsController@delete_news');
             }
         );
     }

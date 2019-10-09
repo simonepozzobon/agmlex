@@ -82401,6 +82401,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -82420,6 +82423,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$root.goToWithParams('news-modifica', {
         id: id
       });
+    },
+    deleteNews: function deleteNews(id) {
+      var _this = this;
+
+      this.$http.delete('/api/admin/news/' + id).then(function (response) {
+        console.log(response);
+
+        if (response.data.success) {
+          var idx = _this.news.findIndex(function (item) {
+            return item.id == response.data.id;
+          });
+
+          if (idx > -1) {
+            _this.news.splice(idx, 1);
+          }
+        }
+      });
     }
   },
   filters: {
@@ -82428,10 +82448,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   created: function created() {
-    var _this = this;
+    var _this2 = this;
 
     this.$http.get('/api/admin/news').then(function (response) {
-      _this.news = response.data.news;
+      _this2.news = response.data.news;
     });
   }
 });
@@ -82662,11 +82682,23 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("button", { staticClass: "btn btn-danger" }, [
-                      _vm._v(
-                        "\n                            Elimina\n                        "
-                      )
-                    ])
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.deleteNews(item.id)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            Elimina\n                        "
+                        )
+                      ]
+                    )
                   ])
                 ])
               ])
