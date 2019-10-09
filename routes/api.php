@@ -27,6 +27,11 @@ Route::prefix('admin')->group(
         Route::post('edit-professional', 'ProfessionalController@edit_professional');
         Route::delete('professional/{id}', 'ProfessionalController@delete_professional');
 
-        Route::get('news', 'NewsController@get_news');
+        Route::prefix('news')->group(
+            function () {
+                Route::get('/', 'NewsController@get_news');
+                Route::post('check-slug', 'NewsController@check_slug');
+            }
+        );
     }
 );

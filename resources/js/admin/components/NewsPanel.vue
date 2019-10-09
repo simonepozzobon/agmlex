@@ -51,8 +51,17 @@
             <block>
                 <div class="form-group">
                     <label for="content">Contenuto</label>
-                    <text-editor />
+                    <text-editor @update="updateContent" />
                 </div>
+            </block>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <block>
+                <button class="btn btn-primary">
+                    Crea News
+                </button>
             </block>
         </div>
     </div>
@@ -62,6 +71,7 @@
 <script>
 import Block from '../components/Block.vue'
 import TextEditor from '../components/TextEditor.vue'
+const debounce = require('lodash.debounce')
 
 export default {
     name: 'NewsPanel',
@@ -82,11 +92,31 @@ export default {
             content: null,
         }
     },
+    watch: {
+        slug: debounce(function (slug) {
+            if (slug.length > 3) {
+                this.checkSlug(slug)
+            }
+        }, 500)
+    },
     methods: {
+        checkSlug: function (slug) {
+            let data = new FormData()
+            data.append('slug', slug)
+
+            console.log('checking slug');
+            this.$http.post('/api/admin/news/check-slug', data).then(response => {
+                console.log(response.data);
+            })
+        },
         showModal: function () {
 
         },
+        updateContent: function (json, html) {
+            this.content = html
+        },
     },
+    created: function () {},
     mounted: function () {
 
     },

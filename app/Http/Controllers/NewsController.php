@@ -14,4 +14,21 @@ class NewsController extends Controller
             'news' => $news,
         ];
     }
+
+    public function check_slug(Request $request)
+    {
+        $slug = $request->slug;
+        $news = News::where('slug', $slug)->first();
+
+        if ($news) {
+            return [
+                'success' => false,
+                'error' => 'lo slug esiste già',
+            ];
+        } else {
+            return [
+                'success' => true,
+            ];
+        }
+    }
 }
