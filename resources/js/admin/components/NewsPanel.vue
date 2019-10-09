@@ -1,5 +1,9 @@
 <template>
-<div class="a-news-panel container">
+<div
+    ref="form"
+    class="a-news-panel container needs-validation"
+    novalidate
+>
     <div class="row mt-5">
         <div class="col-md-7">
             <block class="h-100">
@@ -21,10 +25,16 @@
                     <input
                         type="text"
                         class="form-control"
+                        :class="slugIsValidClass"
                         name="slug"
                         v-model="slug"
                     />
-                    <small>Indirizzo della news...</small>
+                    <small class="form-text text-muted">
+                        Parte finale dell'url della news...
+                    </small>
+                    <div class="invalid-feedback">
+                        Lo slug esiste già
+                    </div>
                 </div>
             </block>
         </div>
@@ -56,7 +66,7 @@
             </block>
         </div>
     </div>
-    <div class="row mt-4">
+    <div class="row mt-4 pb-5">
         <div class="col-12">
             <block>
                 <button class="btn btn-primary">
@@ -72,6 +82,10 @@
 import Block from '../components/Block.vue'
 import TextEditor from '../components/TextEditor.vue'
 const debounce = require('lodash.debounce')
+import {
+    slugify
+}
+from '../../Utilities'
 
 export default {
     name: 'NewsPanel',
@@ -90,23 +104,44 @@ export default {
             title: null,
             slug: null,
             content: null,
+            slugIsValid: null,
         }
     },
     watch: {
+        title: function (title) {
+            this.slug = slugify(title)
+        },
         slug: debounce(function (slug) {
             if (slug.length > 3) {
                 this.checkSlug(slug)
             }
         }, 500)
     },
+    computed: {
+        slugIsValidClass: function () {
+            if (this.slugIsValid == true) {
+                return 'is-valid'
+            }
+            else if (this.slugIsValid == false) {
+                return 'is-invalid'
+            }
+            else {
+                return null
+            }
+        },
+    },
     methods: {
         checkSlug: function (slug) {
             let data = new FormData()
             data.append('slug', slug)
 
-            console.log('checking slug');
             this.$http.post('/api/admin/news/check-slug', data).then(response => {
-                console.log(response.data);
+                if (response.data.success) {
+                    this.slugIsValid = true
+                }
+                else {
+                    this.slugIsValid = false
+                }
             })
         },
         showModal: function () {
