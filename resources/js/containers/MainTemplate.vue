@@ -20,6 +20,10 @@ export default {
             type: String,
             default: null,
         },
+        news: {
+            type: String,
+            default: null,
+        },
     },
     data: function () {
         return {
@@ -42,6 +46,7 @@ export default {
     },
     mounted: function () {
         this.$root.professionals = JSON.parse(this.professionalsJson)
+        this.$root.news = JSON.parse(this.news)
     },
 }
 </script>

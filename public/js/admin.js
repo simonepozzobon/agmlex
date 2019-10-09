@@ -82329,7 +82329,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n[data-v-2c7e7b32]:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*[data-v-2c7e7b32],\n*[data-v-2c7e7b32]::before,\n*[data-v-2c7e7b32]::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-2c7e7b32] {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle[data-v-2c7e7b32], aside[data-v-2c7e7b32], figcaption[data-v-2c7e7b32], figure[data-v-2c7e7b32], footer[data-v-2c7e7b32], header[data-v-2c7e7b32], hgroup[data-v-2c7e7b32], main[data-v-2c7e7b32], nav[data-v-2c7e7b32], section[data-v-2c7e7b32] {\n  display: block;\n}\nbody[data-v-2c7e7b32] {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"][data-v-2c7e7b32]:focus {\n  outline: 0 !important;\n}\nhr[data-v-2c7e7b32] {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1[data-v-2c7e7b32], h2[data-v-2c7e7b32], h3[data-v-2c7e7b32], h4[data-v-2c7e7b32], h5[data-v-2c7e7b32], h6[data-v-2c7e7b32] {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np[data-v-2c7e7b32] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title][data-v-2c7e7b32],\nabbr[data-original-title][data-v-2c7e7b32] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress[data-v-2c7e7b32] {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol[data-v-2c7e7b32],\nul[data-v-2c7e7b32],\ndl[data-v-2c7e7b32] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol[data-v-2c7e7b32],\nul ul[data-v-2c7e7b32],\nol ul[data-v-2c7e7b32],\nul ol[data-v-2c7e7b32] {\n  margin-bottom: 0;\n}\ndt[data-v-2c7e7b32] {\n  font-weight: 700;\n}\ndd[data-v-2c7e7b32] {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote[data-v-2c7e7b32] {\n  margin: 0 0 1rem;\n}\ndfn[data-v-2c7e7b32] {\n  font-style: italic;\n}\nb[data-v-2c7e7b32],\nstrong[data-v-2c7e7b32] {\n  font-weight: bolder;\n}\nsmall[data-v-2c7e7b32] {\n  font-size: 80%;\n}\nsub[data-v-2c7e7b32],\nsup[data-v-2c7e7b32] {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub[data-v-2c7e7b32] {\n  bottom: -.25em;\n}\nsup[data-v-2c7e7b32] {\n  top: -.5em;\n}\na[data-v-2c7e7b32] {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na[data-v-2c7e7b32]:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na[data-v-2c7e7b32]:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na[data-v-2c7e7b32]:not([href]):not([tabindex]):hover, a[data-v-2c7e7b32]:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na[data-v-2c7e7b32]:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre[data-v-2c7e7b32],\ncode[data-v-2c7e7b32],\nkbd[data-v-2c7e7b32],\nsamp[data-v-2c7e7b32] {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre[data-v-2c7e7b32] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure[data-v-2c7e7b32] {\n  margin: 0 0 1rem;\n}\nimg[data-v-2c7e7b32] {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg[data-v-2c7e7b32] {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable[data-v-2c7e7b32] {\n  border-collapse: collapse;\n}\ncaption[data-v-2c7e7b32] {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth[data-v-2c7e7b32] {\n  text-align: inherit;\n}\nlabel[data-v-2c7e7b32] {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton[data-v-2c7e7b32] {\n  border-radius: 0;\n}\nbutton[data-v-2c7e7b32]:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput[data-v-2c7e7b32],\nbutton[data-v-2c7e7b32],\nselect[data-v-2c7e7b32],\noptgroup[data-v-2c7e7b32],\ntextarea[data-v-2c7e7b32] {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton[data-v-2c7e7b32],\ninput[data-v-2c7e7b32] {\n  overflow: visible;\n}\nbutton[data-v-2c7e7b32],\nselect[data-v-2c7e7b32] {\n  text-transform: none;\n}\nbutton[data-v-2c7e7b32],\nhtml [type=\"button\"][data-v-2c7e7b32],\n[type=\"reset\"][data-v-2c7e7b32],\n[type=\"submit\"][data-v-2c7e7b32] {\n  -webkit-appearance: button;\n}\nbutton[data-v-2c7e7b32]::-moz-focus-inner,\n[type=\"button\"][data-v-2c7e7b32]::-moz-focus-inner,\n[type=\"reset\"][data-v-2c7e7b32]::-moz-focus-inner,\n[type=\"submit\"][data-v-2c7e7b32]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"][data-v-2c7e7b32],\ninput[type=\"checkbox\"][data-v-2c7e7b32] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"][data-v-2c7e7b32],\ninput[type=\"time\"][data-v-2c7e7b32],\ninput[type=\"datetime-local\"][data-v-2c7e7b32],\ninput[type=\"month\"][data-v-2c7e7b32] {\n  -webkit-appearance: listbox;\n}\ntextarea[data-v-2c7e7b32] {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset[data-v-2c7e7b32] {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend[data-v-2c7e7b32] {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress[data-v-2c7e7b32] {\n  vertical-align: baseline;\n}\n[type=\"number\"][data-v-2c7e7b32]::-webkit-inner-spin-button,\n[type=\"number\"][data-v-2c7e7b32]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"][data-v-2c7e7b32] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"][data-v-2c7e7b32]::-webkit-search-cancel-button,\n[type=\"search\"][data-v-2c7e7b32]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n[data-v-2c7e7b32]::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput[data-v-2c7e7b32] {\n  display: inline-block;\n}\nsummary[data-v-2c7e7b32] {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate[data-v-2c7e7b32] {\n  display: none;\n}\n[hidden][data-v-2c7e7b32] {\n  display: none !important;\n}\n", ""]);
+exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n[data-v-2c7e7b32]:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*[data-v-2c7e7b32],\n*[data-v-2c7e7b32]::before,\n*[data-v-2c7e7b32]::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-2c7e7b32] {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle[data-v-2c7e7b32], aside[data-v-2c7e7b32], figcaption[data-v-2c7e7b32], figure[data-v-2c7e7b32], footer[data-v-2c7e7b32], header[data-v-2c7e7b32], hgroup[data-v-2c7e7b32], main[data-v-2c7e7b32], nav[data-v-2c7e7b32], section[data-v-2c7e7b32] {\n  display: block;\n}\nbody[data-v-2c7e7b32] {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"][data-v-2c7e7b32]:focus {\n  outline: 0 !important;\n}\nhr[data-v-2c7e7b32] {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1[data-v-2c7e7b32], h2[data-v-2c7e7b32], h3[data-v-2c7e7b32], h4[data-v-2c7e7b32], h5[data-v-2c7e7b32], h6[data-v-2c7e7b32] {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np[data-v-2c7e7b32] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title][data-v-2c7e7b32],\nabbr[data-original-title][data-v-2c7e7b32] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress[data-v-2c7e7b32] {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol[data-v-2c7e7b32],\nul[data-v-2c7e7b32],\ndl[data-v-2c7e7b32] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol[data-v-2c7e7b32],\nul ul[data-v-2c7e7b32],\nol ul[data-v-2c7e7b32],\nul ol[data-v-2c7e7b32] {\n  margin-bottom: 0;\n}\ndt[data-v-2c7e7b32] {\n  font-weight: 700;\n}\ndd[data-v-2c7e7b32] {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote[data-v-2c7e7b32] {\n  margin: 0 0 1rem;\n}\ndfn[data-v-2c7e7b32] {\n  font-style: italic;\n}\nb[data-v-2c7e7b32],\nstrong[data-v-2c7e7b32] {\n  font-weight: bolder;\n}\nsmall[data-v-2c7e7b32] {\n  font-size: 80%;\n}\nsub[data-v-2c7e7b32],\nsup[data-v-2c7e7b32] {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub[data-v-2c7e7b32] {\n  bottom: -.25em;\n}\nsup[data-v-2c7e7b32] {\n  top: -.5em;\n}\na[data-v-2c7e7b32] {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na[data-v-2c7e7b32]:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na[data-v-2c7e7b32]:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na[data-v-2c7e7b32]:not([href]):not([tabindex]):hover, a[data-v-2c7e7b32]:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na[data-v-2c7e7b32]:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre[data-v-2c7e7b32],\ncode[data-v-2c7e7b32],\nkbd[data-v-2c7e7b32],\nsamp[data-v-2c7e7b32] {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre[data-v-2c7e7b32] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure[data-v-2c7e7b32] {\n  margin: 0 0 1rem;\n}\nimg[data-v-2c7e7b32] {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg[data-v-2c7e7b32] {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable[data-v-2c7e7b32] {\n  border-collapse: collapse;\n}\ncaption[data-v-2c7e7b32] {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth[data-v-2c7e7b32] {\n  text-align: inherit;\n}\nlabel[data-v-2c7e7b32] {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton[data-v-2c7e7b32] {\n  border-radius: 0;\n}\nbutton[data-v-2c7e7b32]:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput[data-v-2c7e7b32],\nbutton[data-v-2c7e7b32],\nselect[data-v-2c7e7b32],\noptgroup[data-v-2c7e7b32],\ntextarea[data-v-2c7e7b32] {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton[data-v-2c7e7b32],\ninput[data-v-2c7e7b32] {\n  overflow: visible;\n}\nbutton[data-v-2c7e7b32],\nselect[data-v-2c7e7b32] {\n  text-transform: none;\n}\nbutton[data-v-2c7e7b32],\nhtml [type=\"button\"][data-v-2c7e7b32],\n[type=\"reset\"][data-v-2c7e7b32],\n[type=\"submit\"][data-v-2c7e7b32] {\n  -webkit-appearance: button;\n}\nbutton[data-v-2c7e7b32]::-moz-focus-inner,\n[type=\"button\"][data-v-2c7e7b32]::-moz-focus-inner,\n[type=\"reset\"][data-v-2c7e7b32]::-moz-focus-inner,\n[type=\"submit\"][data-v-2c7e7b32]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"][data-v-2c7e7b32],\ninput[type=\"checkbox\"][data-v-2c7e7b32] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"][data-v-2c7e7b32],\ninput[type=\"time\"][data-v-2c7e7b32],\ninput[type=\"datetime-local\"][data-v-2c7e7b32],\ninput[type=\"month\"][data-v-2c7e7b32] {\n  -webkit-appearance: listbox;\n}\ntextarea[data-v-2c7e7b32] {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset[data-v-2c7e7b32] {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend[data-v-2c7e7b32] {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress[data-v-2c7e7b32] {\n  vertical-align: baseline;\n}\n[type=\"number\"][data-v-2c7e7b32]::-webkit-inner-spin-button,\n[type=\"number\"][data-v-2c7e7b32]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"][data-v-2c7e7b32] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"][data-v-2c7e7b32]::-webkit-search-cancel-button,\n[type=\"search\"][data-v-2c7e7b32]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n[data-v-2c7e7b32]::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput[data-v-2c7e7b32] {\n  display: inline-block;\n}\nsummary[data-v-2c7e7b32] {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate[data-v-2c7e7b32] {\n  display: none;\n}\n[hidden][data-v-2c7e7b32] {\n  display: none !important;\n}\n.a-news-single[data-v-2c7e7b32] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.a-news-single__published[data-v-2c7e7b32] {\n    min-width: 20%;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 20%;\n            flex: 1 1 20%;\n    padding-right: 1rem;\n}\n.a-news-single__image[data-v-2c7e7b32] {\n    min-width: 20%;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 20%;\n            flex: 1 1 20%;\n    padding-left: 1rem;\n    padding-right: 1rem;\n}\n.a-news-single__image img[data-v-2c7e7b32] {\n      max-width: 100%;\n}\n.a-news-single__title[data-v-2c7e7b32] {\n    min-width: 40%;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 40%;\n            flex: 1 1 40%;\n    padding-left: 1rem;\n    padding-right: 1rem;\n}\n", ""]);
 
 // exports
 
@@ -82344,6 +82344,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_CreaNewsTopBar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_CreaNewsTopBar_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Block_vue__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Block_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Block_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
 //
 //
 //
@@ -82361,6 +82363,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -82373,6 +82398,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       news: []
     };
+  },
+  filters: {
+    publishedData: function publishedData(date) {
+      return __WEBPACK_IMPORTED_MODULE_2_moment___default()(date).format('DD-MM-YYYY');
+    }
   },
   created: function created() {
     var _this = this;
@@ -82563,8 +82593,51 @@ var render = function() {
       _c("crea-news-top-bar"),
       _vm._v(" "),
       _vm._l(_vm.news, function(item) {
-        return _c("div", { key: _vm.news.id, staticClass: "row" }, [
-          _c("div", { staticClass: "col-12" }, [_c("block")], 1)
+        return _c("div", { key: _vm.news.id, staticClass: "row mt-3" }, [
+          _c(
+            "div",
+            { staticClass: "col-12" },
+            [
+              _c("block", [
+                _c("div", { staticClass: "a-news-single" }, [
+                  _c("div", { staticClass: "a-news-single__published" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm._f("publishedData")(item.published_at)) +
+                        "\n                    "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "a-news-single__image" }, [
+                    _c("img", { attrs: { src: item.img, alt: item.title } })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "a-news-single__title" }, [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(item.title) +
+                        "\n                    "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "a-news-single__actions" }, [
+                    _c("button", { staticClass: "btn btn-secondary" }, [
+                      _vm._v(
+                        "\n                            Modifica\n                        "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("button", { staticClass: "btn btn-danger" }, [
+                      _vm._v(
+                        "\n                            Elimina\n                        "
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ],
+            1
+          )
         ])
       }),
       _vm._v(" "),

@@ -32,6 +32,7 @@ const app = new Vue({
             },
             containerHeight: 0,
             professionals: [],
+            news: [],
         }
     },
     methods: {

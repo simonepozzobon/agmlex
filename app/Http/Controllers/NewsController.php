@@ -4,12 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
     public function get_news()
     {
         $news = News::all();
+
+        $news = $news->transform(
+            function ($item, $key) {
+                $image = $item->img;
+                $item->img = Storage::disk('local')->url($image);
+                return $item;
+            }
+        );
+
         return [
             'news' => $news,
         ];
