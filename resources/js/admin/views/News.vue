@@ -28,7 +28,10 @@
                         >
                             Modifica
                         </button>
-                        <button class="btn btn-danger">
+                        <button
+                            class="btn btn-danger"
+                            @click.prevent="deleteNews(item.id)"
+                        >
                             Elimina
                         </button>
                     </div>
@@ -60,6 +63,17 @@ export default {
         editNews: function (id) {
             this.$root.goToWithParams('news-modifica', {
                 id: id
+            })
+        },
+        deleteNews: function (id) {
+            this.$http.delete('/api/admin/news/' + id).then(response => {
+                console.log(response);
+                if (response.data.success) {
+                    let idx = this.news.findIndex(item => item.id == response.data.id)
+                    if (idx > -1) {
+                        this.news.splice(idx, 1)
+                    }
+                }
             })
         },
     },
