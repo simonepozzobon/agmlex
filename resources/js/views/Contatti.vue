@@ -73,7 +73,12 @@ export default {
 .contatti {
     margin-top: $spacer * 1.618;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+
+    @include media-breakpoint-up('md') {
+        flex-direction: row;
+    };
 
     &__info {
         padding: $spacer * 2;
@@ -93,10 +98,13 @@ export default {
     }
 
     &__map {
-        flex: 1 1 40%;
-        max-width: 40%;
+        @include media-breakpoint-up('md') {
+            flex: 1 1 40%;
+            max-width: 40%;
+        };
 
         iframe {
+            width: 100%;
             max-width: 100%;
             min-height: 200px;
             max-height: 100%;
