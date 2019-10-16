@@ -51,6 +51,10 @@
                 label="Homepage"
             />
             <nav-link
+                link="news"
+                label="News"
+            />
+            <nav-link
                 link="professionisti"
                 label="Professionisti"
             />

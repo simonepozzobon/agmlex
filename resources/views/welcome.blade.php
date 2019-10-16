@@ -12,7 +12,8 @@
             <main-template
                 ref="MainTemplate"
                 skills="{{ $skills }}"
-                professionals-json="{{ $professionals }}">
+                professionals-json="{{ $professionals }}"
+                news="{{ $newsFormatted }}">
             </main-template>
         </div>
         <script src="/js/app.js"></script>

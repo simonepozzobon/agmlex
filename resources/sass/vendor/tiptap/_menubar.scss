@@ -1,0 +1,49 @@
+.menubar {
+    margin-bottom: 1rem;
+    transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
+    background-color: rgba($gray-200, .5);
+    padding: $spacer;
+    display: flex;
+
+    &.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &.is-focused {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.2s, opacity 0.2s;
+    }
+
+    &__button {
+        display: block;
+        border-radius: 0;
+        border: 0;
+        background: $secondary;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: $font-size-base * 0.75;
+        color: $white;
+        padding: $input-btn-padding-y $input-btn-padding-x;
+        margin-right: 0.2rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($secondary, 25);
+        }
+
+        &.is-active {
+            background-color: $primary;
+        }
+    }
+
+    &__right {
+      margin-left: auto;
+    }
+
+    &__spacer {
+      margin-right: $spacer;
+      margin-left: $spacer;
+    }
+}

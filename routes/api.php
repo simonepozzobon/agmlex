@@ -19,6 +19,8 @@ Route::middleware('auth:api')->get(
     }
 );
 
+Route::get('news/{slug}', 'HomeController@get_news');
+
 
 Route::prefix('admin')->group(
     function () {
@@ -26,5 +28,16 @@ Route::prefix('admin')->group(
         Route::post('new-professional', 'ProfessionalController@create_professional');
         Route::post('edit-professional', 'ProfessionalController@edit_professional');
         Route::delete('professional/{id}', 'ProfessionalController@delete_professional');
+
+        Route::prefix('news')->group(
+            function () {
+                Route::get('/', 'NewsController@get_news');
+                Route::get('/{id}', 'NewsController@get_single_news');
+                Route::post('check-slug', 'NewsController@check_slug');
+                Route::post('create', 'NewsController@create');
+                Route::post('edit', 'NewsController@edit');
+                Route::delete('/{id}', 'NewsController@delete_news');
+            }
+        );
     }
 );

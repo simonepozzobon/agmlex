@@ -19,7 +19,6 @@
 
 <script>
 import ProfessionistiItem from '../components/ProfessionistiItem.vue'
-import professionisti from '../dummies/professionisti'
 
 export default {
     name: 'Professionisti',
@@ -27,9 +26,7 @@ export default {
         ProfessionistiItem,
     },
     data: function () {
-        return {
-            professionisti: professionisti
-        }
+        return {}
     },
     watch: {
         '$root.containerHeight': function (value) {

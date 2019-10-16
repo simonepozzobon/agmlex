@@ -11,6 +11,7 @@ import MainTemplate from './containers/MainTemplate.vue'
 
 import VueRouter from 'vue-router'
 import routes from './router'
+import axios from 'axios'
 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -18,6 +19,8 @@ const router = new VueRouter({
     base: __dirname,
     routes: routes
 })
+
+Vue.prototype.$http = axios
 
 const app = new Vue({
     router,
@@ -32,6 +35,7 @@ const app = new Vue({
             },
             containerHeight: 0,
             professionals: [],
+            news: [],
         }
     },
     methods: {
@@ -48,6 +52,12 @@ const app = new Vue({
                     name: name
                 })
             }
+        },
+        goToWithParams: function (name, params) {
+            this.$router.push({
+                name: name,
+                params: params
+            })
         }
     },
     mounted: function () {

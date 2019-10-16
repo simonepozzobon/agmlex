@@ -1,21 +1,35 @@
+import Home from './views/Home.vue'
+import Professionisti from './views/Professionisti.vue'
+import Competenze from './views/Competenze.vue'
+import News from './views/News.vue'
+import NewsSingle from './views/NewsSingle.vue'
 
-const routes = [
-    {
+
+const routes = [{
         path: '/',
         name: 'home',
-        component: require('./views/Home.vue')
+        component: Home,
     },
     {
         path: '/professionisti',
         name: 'professionisti',
-        component: require('./views/Professionisti.vue')
+        component: Professionisti,
     },
     {
         path: '/competenze',
         name: 'competenze',
-        component: require('./views/Competenze.vue')
+        component: Competenze,
     },
-
+    {
+        path: '/news',
+        name: 'news',
+        component: News,
+    },
+    {
+        path: '/news/:slug',
+        name: 'news-single',
+        component: NewsSingle,
+    }
 ]
 
 export default routes

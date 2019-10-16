@@ -36,6 +36,12 @@ const admin = new Vue({
                 })
             }
         },
+        goToWithParams: function (name, params) {
+            this.$router.push({
+                name: name,
+                params: params
+            })
+        },
     },
     mounted: function () {
         this.goTo()
