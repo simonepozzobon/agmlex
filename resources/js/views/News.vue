@@ -100,12 +100,19 @@ export default {
         }
     }
 
-    &__divider {}
+    &__divider {
+        margin-bottom: $spacer;
+    }
 
     &__date {
-        text-align: right;
         font-size: $font-size-sm;
         color: $gray-600;
+        margin-bottom: $spacer * 1.618;
+    }
+
+    &__short-description {
+        line-height: 2;
+        margin-bottom: $spacer * 1.618;
     }
 }
 </style>

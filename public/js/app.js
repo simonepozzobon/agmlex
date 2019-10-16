@@ -69622,6 +69622,31 @@ webpackContext.id = 180;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'Home',
   watch: {
@@ -69633,12 +69658,11 @@ webpackContext.id = 180;
   methods: {
     setContainerHeight: function setContainerHeight(value) {
       console.log(value);
-      this.$refs.container.style.height = value + 'px';
+      this.$refs.container.style.minHeight = value + 'px';
     }
   },
   mounted: function mounted() {
-    this.setContainerHeight(this.$root.containerHeight);
-    this.$root.footerPosition = 'inherit';
+    this.setContainerHeight(this.$root.containerHeight); // this.$root.footerPosition = 'inherit'
   }
 });
 
@@ -71662,7 +71686,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*,\n*::before,\n*::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle, aside, figcaption, figure, footer, header, hgroup, main, nav, section {\n  display: block;\n}\nbody {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"]:focus {\n  outline: 0 !important;\n}\nhr {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1, h2, h3, h4, h5, h6 {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title],\nabbr[data-original-title] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol,\nul,\ndl {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol,\nul ul,\nol ul,\nul ol {\n  margin-bottom: 0;\n}\ndt {\n  font-weight: 700;\n}\ndd {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote {\n  margin: 0 0 1rem;\n}\ndfn {\n  font-style: italic;\n}\nb,\nstrong {\n  font-weight: bolder;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub {\n  bottom: -.25em;\n}\nsup {\n  top: -.5em;\n}\na {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre,\ncode,\nkbd,\nsamp {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure {\n  margin: 0 0 1rem;\n}\nimg {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable {\n  border-collapse: collapse;\n}\ncaption {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth {\n  text-align: inherit;\n}\nlabel {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton {\n  border-radius: 0;\n}\nbutton:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput,\nbutton,\nselect,\noptgroup,\ntextarea {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton,\ninput {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"],\ninput[type=\"checkbox\"] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"],\ninput[type=\"time\"],\ninput[type=\"datetime-local\"],\ninput[type=\"month\"] {\n  -webkit-appearance: listbox;\n}\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress {\n  vertical-align: baseline;\n}\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput {\n  display: inline-block;\n}\nsummary {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate {\n  display: none;\n}\n[hidden] {\n  display: none !important;\n}\n.home {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 2rem;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.home__description {\n    margin-bottom: 3.236rem;\n}\n.home__banner {\n    margin-bottom: 1.618rem;\n}\n.home__banner img {\n      width: 100%;\n      max-width: 1024px;\n}\n.description {\n  max-width: 1024px;\n}\n.description__title {\n    margin-bottom: 1.618rem;\n}\n.description p {\n    line-height: 2;\n}\n", ""]);
 
 // exports
 
@@ -71678,17 +71702,70 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {
-    ref: "container",
-    staticClass: "d-flex justify-content-center align-items-center",
-    staticStyle: {
-      "background-image": "url('/assets/bg-img.jpg')",
-      "background-size": "cover",
-      "background-repeat": "none"
-    }
-  })
+  return _c("div", { ref: "container", staticClass: "home" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _vm._m(2),
+    _vm._v(" "),
+    _vm._m(3)
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__banner" }, [
+      _c("img", { attrs: { src: "/assets/banner3.jpg", alt: "agmlex" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__description description" }, [
+      _c("h1", { staticClass: "description__title" }, [_vm._v("AgmLex")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n            Società tra avvocati a responsabilità limitata è stata recentemente costituita cogliendo l’opportunità data dalla prima legge sulla concorrenza. Tale forma societaria costituisce un’innovazione volta a rispondere alle esigenze del mercato\n            globale che percepisce l’attività legale alla stregua di fornitura di servizi. Lo studio tuttavia è erede di una tradizione professionale che ha origini antiche e che si è rinnovata nel corso degli anni attraverso la specializzazione\n            nelle aree del diritto civile, societario e degli NPL.\n        "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__description description" }, [
+      _c("h2", { staticClass: "description__title" }, [
+        _vm._v("Avvocati d'impresa")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n            lo studio è specializzato nel diritto societario e nel settore del contenzioso civile e dell'arbitrato in materia di contratti ed obbligazioni. Presta servizi di consulenza in favore di PMI, in italiano ed in inglese. La complessità\n            legislativa e regolamentare in ogni campo oggi impone alle imprese di valutare con attenzione potenziali rischi legali prima inesistenti e di adeguarsi a normative sempre più stringenti. In questo contesto, l’avvocato d'impresa ha il\n            compito di prevenire l'insorgere di problemi (giudiziali e non), attraverso l’analisi dei rischi e delle criticità connessi ad ogni singola operazione. Lo stesso deve gestire e risolvere i problemi già conclamati e quindi non più\n            evitabili, attraverso un’efficace attività di difesa degli interessi dell’impresa, in sede giudiziale e stragiudiziale.\n        "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "home__description description" }, [
+      _c("h2", { staticClass: "description__title" }, [_vm._v("NPL / UTP")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "\n            ha costituito un team di avvocati ed esperti del settore dei crediti deteriorati «NPL» e dei crediti in sofferenza “UTP”, per lo svolgimento delle attività di due diligence, valutazione del sottostante immobiliare, gestione del\n            contenzioso e delle attività di recupero stragiudiziali e di negoziazione per evitare l’inadempimento definitivo.\n        "
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 if (false) {
@@ -72455,7 +72532,12 @@ var competenze = [{
   id: 9,
   title: 'IP prorietà intellettuale',
   content: 'AGMLEX assiste la propria clientela nelle questioni attinenti la tutela della proprietà intellettuale ed industriale. Tanto nella fase giudiziale per la protezione di marchi e brevetti quanto nella fase di negoziazione e redazione di contratti di cessione, licenza, distribuzione, franchising, merchandising, sponsorizzazione, pubblicità e trasferimento di tecnologie.'
-}];
+} // {
+//     id: 10,
+//     title: 'REOCO (Real estate owned companies)',
+//     content: 'Decreto legge crescita (34/2019 confermato dalla legge di conversione (58/2019)<br>Agevolazioni per sostenere la gestione dei crediti deteriorati assistiti da ipoteche su immobili  o derivanti da contratti di leasing. In particolare, le Reoco, cioè le società veicolo ( “SPV”), costituite dalle società che effettuano operazioni di cartolarizzazione al fine di acquisire, gestire e valorizzare i beni immobili, a garanzia dei crediti oggetto di cartolarizzazione. I beni immobili e i diritti trasferiti alla Reoco e le somme realizzate dalla loro vendita costituiscono patrimonio separato,  di talché, non sono ammesse azioni da parte di creditori diversi dalla società di cartolarizzazione. Inoltre sono previste agevolazioni fiscali per incentivare le operazioni delle Reoco : il trasferimento dei beni immobili o dei diritti scontano l’imposta fissa di registro, ipotecaria e catastale (200 euro ciascuna). Sono soggetti a tale imposta agevolata anche gli eventuali accolli di debito, la concessione di garanzie alla società di cartolarizzazione o ad altro finanziatore in relazione all’operazione di cartolarizzazione e i relativi atti di surroga, postergazione, frazionamento, cancellazione e cessione di credito. Parimenti,  le imposte di registro, ipotecaria e catastale sono dovute in misura fissa (200 euro ciascuna) in caso di cessione da parte della Reoco dei detti beni a soggetti che svolgono attività d’impresa, a condizione che l’acquirente dichiari, nel relativo atto di cessione, che intende trasferire i beni in questione entro cinque anni dalla data di acquisto; qualora poi questa condizione non si verifichi, le imposte di registro, ipotecaria e catastale si rendono dovute dall’acquirente in misura ordinaria e si applica una sanzione amministrativa del 30% nonché gli interessi di mora. Qualora i beni in esame siano ceduti a persone fisiche, che possono avvalersi delle agevolazioni “prima casa” le imposte di registro, ipotecaria e catastale sono dovute in misura fissa (200 euro ciascuna). Inoltre, alle Reoco che subentrino in contratti di leasing si applica, con riferimento alla successiva gestione di detti contratti, la disciplina fiscale propria delle società di leasing con la conseguenza che le cessioni effettuate dalle Reoco e aventi a oggetto immobili rinvenienti da contratti di leasing risolti o cessati per fatto dell’utilizzatore si applicano le imposte di registro, ipotecaria e catastale in misura fissa (di euro 200 cadauna).'
+// }
+];
 /* harmony default export */ __webpack_exports__["a"] = (competenze);
 
 /***/ }),
@@ -72587,7 +72669,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n[data-v-3e37c8f2]:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*[data-v-3e37c8f2],\n*[data-v-3e37c8f2]::before,\n*[data-v-3e37c8f2]::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-3e37c8f2] {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle[data-v-3e37c8f2], aside[data-v-3e37c8f2], figcaption[data-v-3e37c8f2], figure[data-v-3e37c8f2], footer[data-v-3e37c8f2], header[data-v-3e37c8f2], hgroup[data-v-3e37c8f2], main[data-v-3e37c8f2], nav[data-v-3e37c8f2], section[data-v-3e37c8f2] {\n  display: block;\n}\nbody[data-v-3e37c8f2] {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"][data-v-3e37c8f2]:focus {\n  outline: 0 !important;\n}\nhr[data-v-3e37c8f2] {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1[data-v-3e37c8f2], h2[data-v-3e37c8f2], h3[data-v-3e37c8f2], h4[data-v-3e37c8f2], h5[data-v-3e37c8f2], h6[data-v-3e37c8f2] {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np[data-v-3e37c8f2] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title][data-v-3e37c8f2],\nabbr[data-original-title][data-v-3e37c8f2] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress[data-v-3e37c8f2] {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol[data-v-3e37c8f2],\nul[data-v-3e37c8f2],\ndl[data-v-3e37c8f2] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol[data-v-3e37c8f2],\nul ul[data-v-3e37c8f2],\nol ul[data-v-3e37c8f2],\nul ol[data-v-3e37c8f2] {\n  margin-bottom: 0;\n}\ndt[data-v-3e37c8f2] {\n  font-weight: 700;\n}\ndd[data-v-3e37c8f2] {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote[data-v-3e37c8f2] {\n  margin: 0 0 1rem;\n}\ndfn[data-v-3e37c8f2] {\n  font-style: italic;\n}\nb[data-v-3e37c8f2],\nstrong[data-v-3e37c8f2] {\n  font-weight: bolder;\n}\nsmall[data-v-3e37c8f2] {\n  font-size: 80%;\n}\nsub[data-v-3e37c8f2],\nsup[data-v-3e37c8f2] {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub[data-v-3e37c8f2] {\n  bottom: -.25em;\n}\nsup[data-v-3e37c8f2] {\n  top: -.5em;\n}\na[data-v-3e37c8f2] {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na[data-v-3e37c8f2]:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na[data-v-3e37c8f2]:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na[data-v-3e37c8f2]:not([href]):not([tabindex]):hover, a[data-v-3e37c8f2]:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na[data-v-3e37c8f2]:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre[data-v-3e37c8f2],\ncode[data-v-3e37c8f2],\nkbd[data-v-3e37c8f2],\nsamp[data-v-3e37c8f2] {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre[data-v-3e37c8f2] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure[data-v-3e37c8f2] {\n  margin: 0 0 1rem;\n}\nimg[data-v-3e37c8f2] {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg[data-v-3e37c8f2] {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable[data-v-3e37c8f2] {\n  border-collapse: collapse;\n}\ncaption[data-v-3e37c8f2] {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth[data-v-3e37c8f2] {\n  text-align: inherit;\n}\nlabel[data-v-3e37c8f2] {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton[data-v-3e37c8f2] {\n  border-radius: 0;\n}\nbutton[data-v-3e37c8f2]:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput[data-v-3e37c8f2],\nbutton[data-v-3e37c8f2],\nselect[data-v-3e37c8f2],\noptgroup[data-v-3e37c8f2],\ntextarea[data-v-3e37c8f2] {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton[data-v-3e37c8f2],\ninput[data-v-3e37c8f2] {\n  overflow: visible;\n}\nbutton[data-v-3e37c8f2],\nselect[data-v-3e37c8f2] {\n  text-transform: none;\n}\nbutton[data-v-3e37c8f2],\nhtml [type=\"button\"][data-v-3e37c8f2],\n[type=\"reset\"][data-v-3e37c8f2],\n[type=\"submit\"][data-v-3e37c8f2] {\n  -webkit-appearance: button;\n}\nbutton[data-v-3e37c8f2]::-moz-focus-inner,\n[type=\"button\"][data-v-3e37c8f2]::-moz-focus-inner,\n[type=\"reset\"][data-v-3e37c8f2]::-moz-focus-inner,\n[type=\"submit\"][data-v-3e37c8f2]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"][data-v-3e37c8f2],\ninput[type=\"checkbox\"][data-v-3e37c8f2] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"][data-v-3e37c8f2],\ninput[type=\"time\"][data-v-3e37c8f2],\ninput[type=\"datetime-local\"][data-v-3e37c8f2],\ninput[type=\"month\"][data-v-3e37c8f2] {\n  -webkit-appearance: listbox;\n}\ntextarea[data-v-3e37c8f2] {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset[data-v-3e37c8f2] {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend[data-v-3e37c8f2] {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress[data-v-3e37c8f2] {\n  vertical-align: baseline;\n}\n[type=\"number\"][data-v-3e37c8f2]::-webkit-inner-spin-button,\n[type=\"number\"][data-v-3e37c8f2]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"][data-v-3e37c8f2] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"][data-v-3e37c8f2]::-webkit-search-cancel-button,\n[type=\"search\"][data-v-3e37c8f2]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n[data-v-3e37c8f2]::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput[data-v-3e37c8f2] {\n  display: inline-block;\n}\nsummary[data-v-3e37c8f2] {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate[data-v-3e37c8f2] {\n  display: none;\n}\n[hidden][data-v-3e37c8f2] {\n  display: none !important;\n}\n.news[data-v-3e37c8f2] {\n  padding: 1rem;\n}\n.news__image img[data-v-3e37c8f2] {\n    max-width: 100%;\n}\n.news__date[data-v-3e37c8f2] {\n    text-align: right;\n    font-size: 0.875rem;\n    color: #6c757d;\n}\n", ""]);
+exports.push([module.i, "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyright 2011-2018 The Bootstrap Authors\n * Copyright 2011-2018 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n */\n[data-v-3e37c8f2]:root {\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --bg: #5D6A7A;\n  --primary: #525D6E;\n  --secondary: #7C828E;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n*[data-v-3e37c8f2],\n*[data-v-3e37c8f2]::before,\n*[data-v-3e37c8f2]::after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-3e37c8f2] {\n  font-family: sans-serif;\n  line-height: 1.15;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -ms-overflow-style: scrollbar;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n@-ms-viewport {\n  width: device-width;\n}\narticle[data-v-3e37c8f2], aside[data-v-3e37c8f2], figcaption[data-v-3e37c8f2], figure[data-v-3e37c8f2], footer[data-v-3e37c8f2], header[data-v-3e37c8f2], hgroup[data-v-3e37c8f2], main[data-v-3e37c8f2], nav[data-v-3e37c8f2], section[data-v-3e37c8f2] {\n  display: block;\n}\nbody[data-v-3e37c8f2] {\n  margin: 0;\n  font-family: \"Libre Baskerville\", serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #212529;\n  text-align: left;\n  background-color: #fff;\n}\n[tabindex=\"-1\"][data-v-3e37c8f2]:focus {\n  outline: 0 !important;\n}\nhr[data-v-3e37c8f2] {\n  -webkit-box-sizing: content-box;\n          box-sizing: content-box;\n  height: 0;\n  overflow: visible;\n}\nh1[data-v-3e37c8f2], h2[data-v-3e37c8f2], h3[data-v-3e37c8f2], h4[data-v-3e37c8f2], h5[data-v-3e37c8f2], h6[data-v-3e37c8f2] {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\np[data-v-3e37c8f2] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nabbr[title][data-v-3e37c8f2],\nabbr[data-original-title][data-v-3e37c8f2] {\n  text-decoration: underline;\n  -webkit-text-decoration: underline dotted;\n          text-decoration: underline dotted;\n  cursor: help;\n  border-bottom: 0;\n}\naddress[data-v-3e37c8f2] {\n  margin-bottom: 1rem;\n  font-style: normal;\n  line-height: inherit;\n}\nol[data-v-3e37c8f2],\nul[data-v-3e37c8f2],\ndl[data-v-3e37c8f2] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n}\nol ol[data-v-3e37c8f2],\nul ul[data-v-3e37c8f2],\nol ul[data-v-3e37c8f2],\nul ol[data-v-3e37c8f2] {\n  margin-bottom: 0;\n}\ndt[data-v-3e37c8f2] {\n  font-weight: 700;\n}\ndd[data-v-3e37c8f2] {\n  margin-bottom: .5rem;\n  margin-left: 0;\n}\nblockquote[data-v-3e37c8f2] {\n  margin: 0 0 1rem;\n}\ndfn[data-v-3e37c8f2] {\n  font-style: italic;\n}\nb[data-v-3e37c8f2],\nstrong[data-v-3e37c8f2] {\n  font-weight: bolder;\n}\nsmall[data-v-3e37c8f2] {\n  font-size: 80%;\n}\nsub[data-v-3e37c8f2],\nsup[data-v-3e37c8f2] {\n  position: relative;\n  font-size: 75%;\n  line-height: 0;\n  vertical-align: baseline;\n}\nsub[data-v-3e37c8f2] {\n  bottom: -.25em;\n}\nsup[data-v-3e37c8f2] {\n  top: -.5em;\n}\na[data-v-3e37c8f2] {\n  color: #525D6E;\n  text-decoration: none;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\na[data-v-3e37c8f2]:hover {\n    color: #313842;\n    text-decoration: underline;\n}\na[data-v-3e37c8f2]:not([href]):not([tabindex]) {\n  color: inherit;\n  text-decoration: none;\n}\na[data-v-3e37c8f2]:not([href]):not([tabindex]):hover, a[data-v-3e37c8f2]:not([href]):not([tabindex]):focus {\n    color: inherit;\n    text-decoration: none;\n}\na[data-v-3e37c8f2]:not([href]):not([tabindex]):focus {\n    outline: 0;\n}\npre[data-v-3e37c8f2],\ncode[data-v-3e37c8f2],\nkbd[data-v-3e37c8f2],\nsamp[data-v-3e37c8f2] {\n  font-family: SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n  font-size: 1em;\n}\npre[data-v-3e37c8f2] {\n  margin-top: 0;\n  margin-bottom: 1rem;\n  overflow: auto;\n  -ms-overflow-style: scrollbar;\n}\nfigure[data-v-3e37c8f2] {\n  margin: 0 0 1rem;\n}\nimg[data-v-3e37c8f2] {\n  vertical-align: middle;\n  border-style: none;\n}\nsvg[data-v-3e37c8f2] {\n  overflow: hidden;\n  vertical-align: middle;\n}\ntable[data-v-3e37c8f2] {\n  border-collapse: collapse;\n}\ncaption[data-v-3e37c8f2] {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  color: #6c757d;\n  text-align: left;\n  caption-side: bottom;\n}\nth[data-v-3e37c8f2] {\n  text-align: inherit;\n}\nlabel[data-v-3e37c8f2] {\n  display: inline-block;\n  margin-bottom: 0.5rem;\n}\nbutton[data-v-3e37c8f2] {\n  border-radius: 0;\n}\nbutton[data-v-3e37c8f2]:focus {\n  outline: 1px dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n}\ninput[data-v-3e37c8f2],\nbutton[data-v-3e37c8f2],\nselect[data-v-3e37c8f2],\noptgroup[data-v-3e37c8f2],\ntextarea[data-v-3e37c8f2] {\n  margin: 0;\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\nbutton[data-v-3e37c8f2],\ninput[data-v-3e37c8f2] {\n  overflow: visible;\n}\nbutton[data-v-3e37c8f2],\nselect[data-v-3e37c8f2] {\n  text-transform: none;\n}\nbutton[data-v-3e37c8f2],\nhtml [type=\"button\"][data-v-3e37c8f2],\n[type=\"reset\"][data-v-3e37c8f2],\n[type=\"submit\"][data-v-3e37c8f2] {\n  -webkit-appearance: button;\n}\nbutton[data-v-3e37c8f2]::-moz-focus-inner,\n[type=\"button\"][data-v-3e37c8f2]::-moz-focus-inner,\n[type=\"reset\"][data-v-3e37c8f2]::-moz-focus-inner,\n[type=\"submit\"][data-v-3e37c8f2]::-moz-focus-inner {\n  padding: 0;\n  border-style: none;\n}\ninput[type=\"radio\"][data-v-3e37c8f2],\ninput[type=\"checkbox\"][data-v-3e37c8f2] {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"date\"][data-v-3e37c8f2],\ninput[type=\"time\"][data-v-3e37c8f2],\ninput[type=\"datetime-local\"][data-v-3e37c8f2],\ninput[type=\"month\"][data-v-3e37c8f2] {\n  -webkit-appearance: listbox;\n}\ntextarea[data-v-3e37c8f2] {\n  overflow: auto;\n  resize: vertical;\n}\nfieldset[data-v-3e37c8f2] {\n  min-width: 0;\n  padding: 0;\n  margin: 0;\n  border: 0;\n}\nlegend[data-v-3e37c8f2] {\n  display: block;\n  width: 100%;\n  max-width: 100%;\n  padding: 0;\n  margin-bottom: .5rem;\n  font-size: 1.5rem;\n  line-height: inherit;\n  color: inherit;\n  white-space: normal;\n}\nprogress[data-v-3e37c8f2] {\n  vertical-align: baseline;\n}\n[type=\"number\"][data-v-3e37c8f2]::-webkit-inner-spin-button,\n[type=\"number\"][data-v-3e37c8f2]::-webkit-outer-spin-button {\n  height: auto;\n}\n[type=\"search\"][data-v-3e37c8f2] {\n  outline-offset: -2px;\n  -webkit-appearance: none;\n}\n[type=\"search\"][data-v-3e37c8f2]::-webkit-search-cancel-button,\n[type=\"search\"][data-v-3e37c8f2]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n[data-v-3e37c8f2]::-webkit-file-upload-button {\n  font: inherit;\n  -webkit-appearance: button;\n}\noutput[data-v-3e37c8f2] {\n  display: inline-block;\n}\nsummary[data-v-3e37c8f2] {\n  display: list-item;\n  cursor: pointer;\n}\ntemplate[data-v-3e37c8f2] {\n  display: none;\n}\n[hidden][data-v-3e37c8f2] {\n  display: none !important;\n}\n.news[data-v-3e37c8f2] {\n  padding: 1rem;\n}\n.news__image img[data-v-3e37c8f2] {\n    max-width: 100%;\n}\n.news__divider[data-v-3e37c8f2] {\n    margin-bottom: 1rem;\n}\n.news__date[data-v-3e37c8f2] {\n    font-size: 0.875rem;\n    color: #6c757d;\n    margin-bottom: 1.618rem;\n}\n.news__short-description[data-v-3e37c8f2] {\n    line-height: 2;\n    margin-bottom: 1.618rem;\n}\n", ""]);
 
 // exports
 
