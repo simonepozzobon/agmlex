@@ -62,6 +62,10 @@
                 link="competenze"
                 label="Competenze"
             />
+            <nav-link
+                link="contatti"
+                label="Contatti"
+            />
         </ul>
     </div>
 </nav>
