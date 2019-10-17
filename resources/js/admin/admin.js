@@ -11,6 +11,7 @@ const router = new VueRouter({
     routes: AdminRoutes,
     base: 'admin',
 })
+
 Vue.use(VueRouter)
 
 
@@ -43,8 +44,6 @@ const admin = new Vue({
             })
         },
     },
-    mounted: function () {
-        this.goTo()
-    },
+    mounted: function () {},
     render: h => h(MainTemplate)
 }).$mount('#admin')

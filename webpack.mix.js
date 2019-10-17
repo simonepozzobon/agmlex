@@ -1,4 +1,6 @@
 const mix = require('laravel-mix')
+require('laravel-mix-purgecss')
+require('laravel-mix-polyfill')
 
 /*
  |--------------------------------------------------------------------------
@@ -23,6 +25,13 @@ mix
                 }
             }
         }
+    })
+    .purgeCss()
+    .polyfill({
+        enabled: true,
+        useBuiltIns: 'usage',
+        targets: 'last 2 version, not dead',
+        debug: true
     })
     .browserSync({
         proxy: 'http://agmlex.test',

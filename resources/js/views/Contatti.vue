@@ -14,14 +14,6 @@
                 </p>
             </div>
             <div class="contatti__detail">
-                <h5>Sede legale</h5>
-                <p>
-                    Piazza Antonio Mancini, 4<br>
-                    00196, Roma (RM)<br>
-                    P.IVA IT14866811004<br>
-                </p>
-            </div>
-            <div class="contatti__detail">
                 <h5>Uffici</h5>
                 <p>
                     Via Giuseppe Palumbo, 12<br>

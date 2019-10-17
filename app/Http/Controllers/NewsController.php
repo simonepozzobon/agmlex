@@ -59,9 +59,13 @@ class NewsController extends Controller
         $news->content = $request->content;
         $news->published_at = $request->published_at;
 
-        $file = $request->file('file');
-        $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-        $image = $file->storeAs('public/media', $filename);
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $image = $file->storeAs('public/media', $filename);
+        } else {
+            $image = 'null';
+        }
 
         $news->img = $image;
         $news->save();

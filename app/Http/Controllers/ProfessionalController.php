@@ -36,9 +36,13 @@ class ProfessionalController extends Controller
         $professional->phone = $request->phone;
         $professional->email = $request->email;
 
-        $file = $request->file('file');
-        $filename = uniqid() . '.' . $file->getClientOriginalExtension();
-        $image = $file->storeAs('public/media', $filename);
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $image = $file->storeAs('public/media', $filename);
+        } else {
+            $image = 'null';
+        }
 
         $professional->img = $image;
         $professional->save();

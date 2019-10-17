@@ -7,7 +7,7 @@ import NewsSingle from './views/NewsSingle.vue'
 
 
 const routes = [{
-        path: '/',
+        path: '',
         name: 'home',
         component: Home,
     },
