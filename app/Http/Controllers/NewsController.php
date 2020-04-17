@@ -109,8 +109,8 @@ class NewsController extends Controller
         $news->delete();
 
         return [
-          'success' => true,
-          'id' => $id,
+            'success' => true,
+            'id' => $id,
         ];
     }
 }

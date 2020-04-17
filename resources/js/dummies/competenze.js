@@ -43,6 +43,26 @@ const competenze = [{
         title: 'IP prorietà intellettuale',
         content: 'AGMLEX assiste la propria clientela nelle questioni attinenti la tutela della proprietà intellettuale ed industriale. Tanto nella fase giudiziale per la protezione di marchi e brevetti quanto nella fase di negoziazione e redazione di contratti di cessione, licenza, distribuzione, franchising, merchandising, sponsorizzazione, pubblicità e trasferimento di tecnologie.'
     },
+    {
+        id: 10,
+        title: 'Affari internazionali',
+        content: 'Lo Studio è in grado di fornire ampia assistenza e consulenza in ogni settore del business and transactional law internazionale, incluse operazioni di M&A e straordinarie nonché elementi di fiscalità internazionale, offrendo le migliori soluzioni per la tutela stragiudiziale degli interessi della clientela. Con i propri soci, conulenti e partner, situati anche fuori dai confini nazionali, le competenze e l\'eperienza sono variegate e diffuse su molteplici settori e aree d\'interesse.',
+    },
+    {
+        id: 11,
+        title: 'Appalti pubblici e contrattualistica pubblica',
+        content: 'Lo Studio, tramite i soci e consulenti, ha esperienza consolidata nelle materie degli appalti pubblici e concessioni, dall\'evidenza pubblica alla contrattualistica pubblica e nel diritto amministrativo di settore in genere.'
+    },
+    {
+        id: 12,
+        title: 'Diritto del gaming e delle concessioni pubbliche; compliance Antiriciclaggio.',
+        content: 'Lo Studio, tramite i soci e consulenti, ha esperienza nella disciplina del gioco lecito tanto in relazione alle esigenze, a 360°, dei concessionari – incluse società appartenenti a gruppi stranieri - ai fini della gestione e conduzione delle concessioni, anche nei rapporti con la PA regolatrice, quanto di quelle degli operatori di settore. Inoltre, lo Studio ha competenza nella consulenza sui rapporti tra i concessionari e gli operatori delle reti e filiere, nonché su quelli tra società (concessionari, operatori, player privati) ed ogni partner strategico per la gestione del complesso business di riferimento.<br>Competenza nella compliance Antiriciclaggio (D.Lgs. 231/2007 e D.Lgs. 90/2017; D. Lgs. 125/2019 recepimento V Direttiva UE 843/2018).'
+    },
+    {
+        id: 13,
+        title: 'Compliance privacy (GDPR, Codice della Privacy, Data Protection) per i privati e nelle società, nei luoghi di lavoro ed aperti al pubblico.',
+        content: 'Lo Studio ha competenza nel settore Data Protection ai sensi del GDPR e del diritto nazionale a favore di aziende e privati – inclusa la compliance generale e particolare a favore di società e nei luoghi di lavoro – offrendo soluzioni tecnico-giuridiche e logico-informatiche nei complessi ambiti in cu isi dirama l\'adeguamento alla normativa UE e italiana della sicurezza dei dati, nonché degli strumenti (giuridici, fisici e IT) e dei luoghi in cui essi si trovano.<br>Consulenza certificata UNI 11697/2017 nella Responsabilità della Protezione Dati Personali (DPO) ex artt. 37 e ss. GDPR.'
+    },
     // {
     //     id: 10,
     //     title: 'REOCO (Real estate owned companies)',

@@ -13,7 +13,9 @@ class HomeController extends Controller
     public function home()
     {
         $skills = Skill::all();
-        $news = News::orderBy('published_at')->get();
+        $news = News::orderBy('published_at', 'desc')
+            ->get();
+
         $professionals = Professional::with('fields')->get();
 
         $newsFormatted = $news->transform(
