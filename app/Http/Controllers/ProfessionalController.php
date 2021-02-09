@@ -16,7 +16,8 @@ class ProfessionalController extends Controller
         $professionals = $professionals->transform(
             function ($professional, $key) {
                 $image = $professional->img;
-                $professional->img = Storage::disk('local')->url($image);
+                $professional->img = Storage::disk('local')
+                    ->url($image);
                 return $professional;
             }
         );
@@ -58,8 +59,15 @@ class ProfessionalController extends Controller
             }
         }
 
-        $professional = Professional::where('id', $professional->id)->with('fields')->first();
-        $professional->img = Storage::disk('local')->url($professional->img);
+        $professional = Professional::where(
+            'id',
+            $professional->id
+        )
+            ->with('fields')
+            ->first();
+
+        $professional->img = Storage::disk('local')
+            ->url($professional->img);
 
         return [
             'success' => true,
@@ -92,8 +100,15 @@ class ProfessionalController extends Controller
             }
         }
 
-        $professional = Professional::where('id', $professional->id)->with('fields')->first();
-        $professional->img = Storage::disk('local')->url($professional->img);
+        $professional = Professional::where(
+            'id',
+            $professional->id
+        )
+            ->with('fields')
+            ->first();
+
+        $professional->img = Storage::disk('local')
+            ->url($professional->img);
 
         return [
             'success' => true,
