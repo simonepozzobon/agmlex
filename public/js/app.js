@@ -2028,6 +2028,13 @@ __webpack_require__.r(__webpack_exports__);
       status: false
     };
   },
+  computed: {
+    avatarUrl: function () {
+      if (this.img) {
+        return `background-image: url('${this.img}');`;
+      }
+    }
+  },
   methods: {
     collapse: function () {
       let content = this.$refs.content;
@@ -7452,7 +7459,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.professionista {\n  flex: 0 0 100%;\n  max-width: 100%;\n  padding: 3%;\n}\n@media (max-width: 767.98px) {\n.professionista {\n      flex: 0 0 100%;\n      max-width: 100%;\n}\n}\n@media (min-width: 768px) {\n.professionista {\n      flex: 0 0 33.33333%;\n      max-width: 33.33333%;\n}\n}\n.professionista .professionista-header {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    padding-bottom: 1rem;\n    border-bottom: 1px solid #525D6E;\n}\n.professionista .professionista-header .professionista-avatar {\n      display: block;\n      position: relative;\n      width: 10rem;\n      height: 10rem;\n      border-radius: 50%;\n      margin-bottom: 1rem;\n      overflow: hidden;\n}\n.professionista .professionista-header .professionista-avatar img {\n        position: absolute;\n        left: 50%;\n        top: 50%;\n        transform: translate(-50%, -50%);\n}\n.professionista .professionista-header .professionista-name {\n      font-weight: bold;\n}\n.professionista .professionista-content {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n    color: #7C828E;\n    text-align-last: center;\n    text-align: justify;\n}\n.professionista .professionista-content .professionista-contacts ul {\n      list-style: none;\n      padding-inline-start: 0;\n}\n.professionista .professionista-content .professionista-contacts ul li {\n        font-weight: bold;\n        color: #525D6E;\n}\n.professionista .professionista-content .professionista-fields ul {\n      list-style: none;\n      padding-inline-start: 0;\n}\n.professionista .professionista-footer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n}\n", ""]);
+exports.push([module.i, "\n.professionista {\n  flex: 0 0 100%;\n  max-width: 100%;\n  padding: 3%;\n}\n@media (max-width: 767.98px) {\n.professionista {\n      flex: 0 0 100%;\n      max-width: 100%;\n}\n}\n@media (min-width: 768px) {\n.professionista {\n      flex: 0 0 33.33333%;\n      max-width: 33.33333%;\n}\n}\n.professionista .professionista-header {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    padding-bottom: 1rem;\n    border-bottom: 1px solid #525D6E;\n}\n.professionista .professionista-header .professionista-avatar {\n      display: block;\n      position: relative;\n      width: 10rem;\n      height: 10rem;\n      border-radius: 50%;\n      overflow: hidden;\n      background-size: cover;\n      background-position: center;\n}\n.professionista .professionista-header .professionista-avatar img {\n        position: absolute;\n        left: 50%;\n        top: 50%;\n        transform: translate(-50%, -50%);\n}\n.professionista .professionista-header .professionista-name {\n      font-weight: bold;\n}\n.professionista .professionista-content {\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n    color: #7C828E;\n    text-align-last: center;\n    text-align: justify;\n}\n.professionista .professionista-content .professionista-contacts ul {\n      list-style: none;\n      padding-inline-start: 0;\n}\n.professionista .professionista-content .professionista-contacts ul li {\n        font-weight: bold;\n        color: #525D6E;\n}\n.professionista .professionista-content .professionista-fields ul {\n      list-style: none;\n      padding-inline-start: 0;\n}\n.professionista .professionista-footer {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding-top: 1rem;\n    padding-bottom: 1rem;\n}\n", ""]);
 
 // exports
 
@@ -57533,15 +57540,10 @@ var render = function() {
       {
         staticClass: "professionista-header",
         attrs: { "data-toggle": "collapse" },
-        on: { click: this.collapse }
+        on: { click: _vm.collapse }
       },
       [
-        _c("a", { staticClass: "professionista-avatar" }, [
-          _c("img", {
-            staticClass: "img-fluid",
-            attrs: { src: _vm.img, alt: "default" }
-          })
-        ]),
+        _c("a", { staticClass: "professionista-avatar", style: _vm.avatarUrl }),
         _vm._v(" "),
         _c("a", { staticClass: "professionista-name" }, [
           _vm._v("\n            " + _vm._s(_vm.name) + "\n        ")
@@ -57574,7 +57576,7 @@ var render = function() {
         _c("div", { staticClass: "professionista-fields" }, [
           _c(
             "ul",
-            _vm._l(this.fields, function(field) {
+            _vm._l(_vm.fields, function(field) {
               return _c("li", { key: field.id }, [
                 _vm._v(
                   "\n                    " +
@@ -57590,7 +57592,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "professionista-footer" }, [
-      _c("a", { on: { click: this.collapse } }, [
+      _c("a", { on: { click: _vm.collapse } }, [
         _vm.status
           ? _c(
               "svg",

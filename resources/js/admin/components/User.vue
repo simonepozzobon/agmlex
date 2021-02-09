@@ -1,13 +1,7 @@
 <template>
     <div class="a-user" ref="user">
         <div class="a-user__image-placeholder animated-container">
-            <div class="a-user__image animated-field" :style="avatarUrl">
-                <img
-                    :src="user.img"
-                    :alt="user.name"
-                    class="a-user__image-src"
-                />
-            </div>
+            <div class="a-user__image animated-field" :style="avatarUrl"></div>
         </div>
         <div class="a-user__description animated-container">
             <div class="a-user__name animated-field">
@@ -88,7 +82,7 @@ export default {
     computed: {
         avatarUrl: function() {
             if (this.user && this.user.img) {
-                return `background-url: url('${this.user.img}');`;
+                return `background-image: url('${this.user.img}');`;
             }
         }
     },
@@ -223,6 +217,9 @@ export default {
         height: 128px;
         overflow: hidden;
         position: relative;
+        background-size: cover;
+        background-position: center;
+        @include border-radius(50%);
     }
 
     &__image-src {

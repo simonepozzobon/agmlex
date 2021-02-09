@@ -3,14 +3,14 @@
     <div
         class="professionista-header"
         data-toggle="collapse"
-        @click="this.collapse"
+        @click="collapse"
     >
-        <a class="professionista-avatar">
-            <img
+        <a class="professionista-avatar" :style="avatarUrl">
+            <!-- <img
                 :src="img"
                 alt="default"
                 class="img-fluid"
-            >
+            > -->
         </a>
         <a class="professionista-name">
             {{ name }}
@@ -33,7 +33,7 @@
         <div class="professionista-fields">
             <ul>
                 <li
-                    v-for="field in this.fields"
+                    v-for="field in fields"
                     :key="field.id"
                 >
                     {{ field.name }}
@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="professionista-footer">
-        <a @click="this.collapse">
+        <a @click="collapse">
             <svg
                 v-if="status"
                 width="32"
@@ -133,6 +133,13 @@ export default {
             status: false,
         }
     },
+    computed: {
+        avatarUrl: function() {
+            if (this.img) {
+                return `background-image: url('${this.img}');`
+            }
+        }
+    },
     methods: {
         collapse: function () {
             let content = this.$refs.content
@@ -175,8 +182,10 @@ export default {
             width: $spacer * 10;
             height: $spacer * 10;
             @include border-radius (50%);
-            margin-bottom: $spacer;
+            // margin-bottom: $spacer;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
 
             img {
                 position: absolute;
