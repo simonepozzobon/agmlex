@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\News;
-use App\Skill;
-use App\Professional;
+use App\Models\News;
+use App\Models\Skill;
+use App\Models\Professional;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

@@ -1,6 +1,7 @@
-const mix = require('laravel-mix')
-require('laravel-mix-purgecss')
-require('laravel-mix-polyfill')
+const mix = require("laravel-mix");
+const path = require("path");
+require("laravel-mix-purgecss");
+require("laravel-mix-polyfill");
 
 /*
  |--------------------------------------------------------------------------
@@ -8,39 +9,34 @@ require('laravel-mix-polyfill')
  |--------------------------------------------------------------------------
  |
  | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
+ | for your Laravel applications. By default, we are compiling the CSS
  | file for the application as well as bundling up all the JS files.
  |
  */
 
-mix
-    .js('resources/js/admin/admin.js', 'public/js/admin.js')
-    .js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .webpackConfig(webpack => {
+mix.js("resources/js/admin/admin.js", "public/js/admin.js")
+    .js("resources/js/app.js", "public/js")
+    .vue()
+    .sass("resources/sass/app.scss", "public/css")
+    .webpackConfig((webpack) => {
         return {
             resolve: {
                 alias: {
-                    'styles': path.resolve(__dirname, 'resources/sass'),
-                }
-            }
-        }
+                    styles: path.resolve(__dirname, "resources/sass"),
+                },
+            },
+        };
     })
     .purgeCss()
     .polyfill({
         enabled: true,
-        useBuiltIns: 'usage',
-        targets: 'last 2 version, not dead',
-        debug: true
+        useBuiltIns: "usage",
+        targets: "last 2 version, not dead",
+        debug: true,
     })
     .browserSync({
-        proxy: 'http://agmlex.test',
-        browser: 'google chrome',
+        proxy: "http://agmlex.test",
+        browser: "google chrome",
         port: 3008,
-        files: [
-            'public/**/*',
-            'resources/**/*',
-            'app/**/*',
-            'config/**/*'
-        ]
-    })
+        files: ["public/**/*", "resources/**/*", "app/**/*", "config/**/*"],
+    });

@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,5 +14,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/admin/{slug?}', 'AdminController@home')->where('slug', '.*');
-Route::get('/{slug}', 'HomeController@home')->where('slug', '.*');
+
+Route::get('/admin/{slug?}', [AdminController::class, 'home'])->where('slug', '.*');
+Route::get('/{slug}', [HomeController::class, 'home'])->where('slug', '.*');
