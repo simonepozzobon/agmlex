@@ -15,5 +15,12 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/admin/{slug?}', [AdminController::class, 'home'])->where('slug', '.*');
-Route::get('/{slug}', [HomeController::class, 'home'])->where('slug', '.*');
+Route::get(
+    '/admin/{slug?}',
+    [AdminController::class, 'home']
+)->where('slug', '.*');
+
+Route::get(
+    '/{slug}',
+    [HomeController::class, 'home']
+)->where('slug', '.*');

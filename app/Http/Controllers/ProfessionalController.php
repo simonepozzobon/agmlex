@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Professional;
-use App\Field;
+use App\Models\Professional;
+use App\Models\Field;
 use Illuminate\Support\Facades\Storage;
 
 class ProfessionalController extends Controller
@@ -23,9 +23,9 @@ class ProfessionalController extends Controller
 
         $fields = Field::all();
         return [
-          'success' => true,
-          'professionals' => $professionals,
-          'fields' => $fields,
+            'success' => true,
+            'professionals' => $professionals,
+            'fields' => $fields,
         ];
     }
 
@@ -62,8 +62,8 @@ class ProfessionalController extends Controller
         $professional->img = Storage::disk('local')->url($professional->img);
 
         return [
-          'success' => true,
-          'professional' => $professional,
+            'success' => true,
+            'professional' => $professional,
         ];
     }
 
@@ -88,7 +88,7 @@ class ProfessionalController extends Controller
         foreach (json_decode($request->fields) as $key => $value) {
             if ($value == true) {
                 $field = Field::find($key);
-                    $professional->fields()->save($field);
+                $professional->fields()->save($field);
             }
         }
 
@@ -96,10 +96,10 @@ class ProfessionalController extends Controller
         $professional->img = Storage::disk('local')->url($professional->img);
 
         return [
-          'success' => true,
-          'fields' => $fields,
-          'request' => $request->all(),
-          'professional' => $professional,
+            'success' => true,
+            'fields' => $fields,
+            'request' => $request->all(),
+            'professional' => $professional,
         ];
     }
 
@@ -109,8 +109,8 @@ class ProfessionalController extends Controller
         $professional->delete();
 
         return [
-          'success' => true,
-          'id' => $id,
+            'success' => true,
+            'id' => $id,
         ];
     }
 }

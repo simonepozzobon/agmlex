@@ -2,6 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfessionalController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,24 +25,65 @@ Route::middleware('auth:api')->get(
     }
 );
 
-Route::get('news/{slug}', 'HomeController@get_news');
+Route::get(
+    'news/{slug}',
+    [HomeController::class, 'get_news']
+);
 
 
 Route::prefix('admin')->group(
     function () {
-        Route::get('professionals', 'ProfessionalController@get_professionals');
-        Route::post('new-professional', 'ProfessionalController@create_professional');
-        Route::post('edit-professional', 'ProfessionalController@edit_professional');
-        Route::delete('professional/{id}', 'ProfessionalController@delete_professional');
+        Route::get(
+            'professionals',
+            [ProfessionalController::class, 'get_professionals']
+        );
+
+        Route::post(
+            'new-professional',
+            [ProfessionalController::class, 'create_professional']
+        );
+
+        Route::post(
+            'edit-professional',
+            [ProfessionalController::class, 'edit_professional']
+        );
+
+        Route::delete(
+            'professional/{id}',
+            [ProfessionalController::class, 'delete_professional']
+        );
 
         Route::prefix('news')->group(
             function () {
-                Route::get('/', 'NewsController@get_news');
-                Route::get('/{id}', 'NewsController@get_single_news');
-                Route::post('check-slug', 'NewsController@check_slug');
-                Route::post('create', 'NewsController@create');
-                Route::post('edit', 'NewsController@edit');
-                Route::delete('/{id}', 'NewsController@delete_news');
+                Route::get(
+                    '/',
+                    [NewsController::class, 'get_news']
+                );
+
+                Route::get(
+                    '/{id}',
+                    [NewsController::class, 'get_single_news']
+                );
+
+                Route::post(
+                    'check-slug',
+                    [NewsController::class, 'check_slug']
+                );
+
+                Route::post(
+                    'create',
+                    [NewsController::class, 'create']
+                );
+
+                Route::post(
+                    'edit',
+                    [NewsController::class, 'edit']
+                );
+
+                Route::delete(
+                    '/{id}',
+                    [NewsController::class, 'delete_news']
+                );
             }
         );
     }
