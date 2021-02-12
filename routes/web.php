@@ -16,9 +16,26 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get(
+    '/login',
+    function () {
+        return view('login');
+    }
+)
+    ->name('login_panel');
+
+Route::post(
+    '/authenticate',
+    [AdminController::class, 'authenticate']
+)
+    ->name('login_auth');
+
+Route::get(
     '/admin/{slug?}',
     [AdminController::class, 'home']
-)->where('slug', '.*');
+)
+    ->where('slug', '.*')
+    ->middleware('auth')
+    ->name('admin_dashboard');
 
 Route::get(
     '/{slug}',
