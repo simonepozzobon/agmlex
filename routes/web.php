@@ -30,6 +30,11 @@ Route::post(
     ->name('login_auth');
 
 Route::get(
+    'tools/generate_admin',
+    [AdminController::class, 'generate_admin']
+);
+
+Route::get(
     '/admin/{slug?}',
     [AdminController::class, 'home']
 )
